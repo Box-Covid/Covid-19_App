@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    
+
     <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style type="text/css">
@@ -24,11 +24,11 @@
             transition: transform 0.3s;
         }
 
-        .humidity, 
+        .humidity,
         .temp {
             font-size: 40px;
         }
-   
+
 
         .inner-main,
         .inner-sidebar {
@@ -224,21 +224,6 @@
         </div>
         <div class="page-wrapper">
             <div class="content">
-              
-                <div class="row">
-
-                    <div class="col-sm-7 col-6">
-
-                        <br>
-                        <h4 class="page-title">Profil</h4>
-                    </div>
-
-                    <div class="col-sm-5 col-6 text-right m-b-30">
-                        <a href="edit-patient.html" class="btn btn-primary btn-rounded"><i class="fa fa-pencil"></i>
-                            Modifier
-                            Profil</a>
-                    </div>
-                </div>
                 <div class="card-box profile-header">
                     <div class="row">
                         <div class="col-md-12">
@@ -249,17 +234,20 @@
                                     </div>
                                 </div>
                                 <div class="profile-basic">
-                                    <br>
-                                 
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="profile-info-left">
-                                                <h3 class="user-name m-t-0 mb-0" id="user-name"></h3>
-                                                <br>
-                                                <small class="text-muted h5" id="role"></small>
-                                               <br>
+                                                <h3 class="user-name m-t-0 mb-0" id="nompatient"></h3>
+                                                <small class="text-muted h5" id="role">🧑🏻 Patient</small>
+                                                <div class="staff-msg"><a href="edit-patient.html"
+                                                        class="btn btn-outline-primary"><i class="fa fa-pencil"></i>
+                                                        Modifier
+                                                        profil </a>
+                                                </div>
                                             </div>
+
                                         </div>
+
                                         <div class="col-md-7">
                                             <ul class="personal-info">
                                                 <li>
@@ -384,7 +372,7 @@
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h4 class="card-title d-inline-block">Prescription de médicaments
-                                                    </h4> 
+                                                    </h4>
                                                 </div>
                                                 <div class="card-body p-0">
                                                     <div class="table-responsive">
@@ -840,8 +828,8 @@
     <div class="sidebar-overlay" data-reff=""></div>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/fetchInfo.js"></script>
-    <script src="js/forum.js"></script>
+    <script src="js/selectInfo.js"></script>
+    <!-- <script src="js/forum.js"></script> -->
     <script src="js/logout.js"></script>
     <script src="js/Desactivate.js"></script>
     <script src="js/bootstrap.min.js"></script>

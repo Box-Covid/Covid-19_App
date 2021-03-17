@@ -18,7 +18,7 @@ $(document).ready(function () {
             } else {
                 for (var i = 0; i < data.length; i++) {
 
-                    $("#maladie").append('<div id="maladie"><div class="experience-box"><ul class="experience-list"><li><div class="experience-user"><div class="before-circle"></div></div><div class="experience-content"><div class="timeline-content"><a href="#/" class="name"><hr>Nom :</a><a style="display: block; float: right; font-size: 20px;"href="edit-Maladie.html" class="modifier"><i id="' + data[i].Id + '" class="fa fa-pencil m-r-5 text-success"></i></a><a style="display: block; float: right; font-size: 20px;" class="supprimer" style="cursor: pointer;"><i id="' + data[i].Id + '" class="fa fa-trash-o m-r-5 text-danger"></i></a><label style="display : none;" id="id">' + data[i].Id + '</label><div></div><span class="time" id="nommaladie"><b>' + data[i].NameDis + '</b></span></div></div></li><li><div class="experience-user"><div class="before-circle"></div></div><div class="experience-content"><div class="timeline-content"><a href="#/" class="name">Degré :</a><div></div><span class="time" id="degremaladie"><b>' + data[i].DegDis + '</b></span></div></div></li><li><div class="experience-user"><div class="before-circle"></div></div><div class="experience-content"><div class="timeline-content"><a href="#/" class="name">Détails :</a><div></div><span class="time" id="descriptionmaladie"><b>' + data[i].DesripDis + '</b></span></div><hr></div></li></ul></div>');
+                    $("#maladie").append('<div id="maladie"><div class="experience-box"><ul class="experience-list"><li><div class="experience-user"><div class="before-circle"></div></div><div class="experience-content"><div class="timeline-content"><a href="#/" class="name"><hr>Nom :</a><a style="display: block; float: right; font-size: 20px;"href="edit-Maladie.html" class="modifier"><i id="' + data[i].Id + '" class="fa fa-pencil m-r-5 text-success"></i></a><a style="display: block; float: right; font-size: 20px; cursor: pointer;" class="supprimer"><i id="' + data[i].Id + '" class="fa fa-trash-o m-r-5 text-danger"></i></a><label style="display : none;" id="id">' + data[i].Id + '</label><div></div><span class="time" id="nommaladie"><b>' + data[i].NameDis + '</b></span></div></div></li><li><div class="experience-user"><div class="before-circle"></div></div><div class="experience-content"><div class="timeline-content"><a href="#/" class="name">Degré :</a><div></div><span class="time" id="degremaladie"><b>' + data[i].DegDis + '</b></span></div></div></li><li><div class="experience-user"><div class="before-circle"></div></div><div class="experience-content"><div class="timeline-content"><a href="#/" class="name">Détails :</a><div></div><span class="time" id="descriptionmaladie"><b>' + data[i].DesripDis + '</b></span></div><hr></div></li></ul></div>');
                 }
             }
             $(document).on('click', '.supprimer', function (event) {
@@ -30,13 +30,14 @@ $(document).ready(function () {
                         success: function () {
                             //'id='+id,          
                             Swal.fire({
-                                title: 'Are you sure?',
-                                text: "You won't be able to revert this!",
+                                title: 'Suppression maladie !',
+                                text: "Voulez-vous supprimer cette maladie ?",
                                 type: 'warning',
                                 showCancelButton: true,
                                 confirmButtonColor: '#3085d6',
                                 cancelButtonColor: '#d33',
-                                confirmButtonText: 'Yes, delete it!'
+                                confirmButtonText: 'Oui',
+                                cancelButtonText: 'Annuler'
                             }).then((result) => {
                                 if (result.value) {
                                     $.ajax

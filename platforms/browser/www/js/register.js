@@ -9,7 +9,6 @@ $(document).ready(function () {
     var username = $("#username").val();
     var tel = $("#tel").val();
     // var add = $("#add").val();
-    var role = $("#role").val();
     var pwd = $("#pwd").val();
 
    
@@ -21,16 +20,16 @@ $(document).ready(function () {
       var test = true;
 
 
-    if (($.trim(prenom).length == 0) || ($.trim(nom).length == 0) || ($.trim(dateN).length == 0) || ($.trim(sexe).length == 0) || ($.trim(username).length == 0) || ($.trim(tel).length == 0) || ($.trim(role).length == 0) || ($.trim(pwd).length < 8)) {
+    if (($.trim(prenom).length == 0) || ($.trim(nom).length == 0) || ($.trim(dateN).length == 0) || ($.trim(sexe).length == 0) || ($.trim(username).length == 0) || ($.trim(tel).length == 0) || ($.trim(pwd).length < 8)) {
       test = false;
 
     } else if (test == true) {
       event.preventDefault();
       $.ajax({
         type: "POST",  //Request type
-        url: "http://192.168.43.69:1880/user",
+        url: "http://192.168.43.69:1880/userDoctor",
         timeout: 400,
-        //data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, role: role, pwd, pwd },
+        //data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, pwd, pwd },
         data: { username: username },
         error: function () {
           swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
@@ -41,7 +40,7 @@ $(document).ready(function () {
               type: "POST",
               url: "http://192.168.43.69:1880/box",
               timeout: 1000,
-              data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, role: role, pwd: pwd },
+              data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, pwd: pwd },
               error: function () {
                 swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
               },

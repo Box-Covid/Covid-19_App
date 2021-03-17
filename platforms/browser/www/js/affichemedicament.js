@@ -27,13 +27,14 @@ $(document).ready(function () {
                     ({
                         success: function () {
                             Swal.fire({
-                                title: 'Are you sure?',
-                                text: "You won't be able to revert this!",
+                                title: 'Suppression médicament !',
+                                text: "Voulez-vous supprimer ce médicament ?",
                                 type: 'warning',
                                 showCancelButton: true,
                                 confirmButtonColor: '#3085d6',
                                 cancelButtonColor: '#d33',
-                                confirmButtonText: 'Yes, delete it!'
+                                confirmButtonText: 'Oui',
+                                cancelButtonText: 'Annuler'
                             }).then((result) => {
                                 if (result.value) {
                                     $.ajax

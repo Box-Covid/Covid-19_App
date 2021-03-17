@@ -14,10 +14,10 @@ $(document).ready(function () {
             // var nowDate = new Date(parseInt(dateN.substr(6)));
             // result += nowDate.format("dd/mm/yyyy") + " : dd/mm/yyyy";
             $("#nompatient").text(data[0].Firstname + " " + data[0].Lastname);
-            $("#role").text(data[0].Role);
+            //$("#role").text(data[0].Role);
             $("#tel").text(data[0].Num);
             $("#date").text(ch);
-            $("#sexe").text(data[0].Sex);
+            $("#sexe").text(data[0].Sexe);
 
 
         }

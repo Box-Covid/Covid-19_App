@@ -3,7 +3,7 @@ $(document).ready(function () {
     var Id = localStorage.getItem("id");
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/id",
+        url: "http://192.168.43.69:1880/idDr",
         data: { Id: Id },
         error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
@@ -12,9 +12,8 @@ $(document).ready(function () {
 
             $("#prenom").val(data[0].Firstname);
             $("#nom").val(data[0].Lastname);
-            $("#usern").val(data[0].Email);
-            $("#mdp").val(data[0].password);
-            $("#cMdp").val(data[0].password);
+            $("#usern").val(data[0].Username);
+            $("#mdp").val(data[0].password);            
             $("#telNum").val(data[0].Num);
         }
     });
@@ -35,14 +34,14 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "POST",
-                    url: "http://192.168.43.69:1880/edit",
+                    url: "http://192.168.43.69:1880/editDr",
                     timeout: 700,
                     data: { prenom: prenom, nom: nom, dateN: dateN, username: username, tel: tel, pwd: mdp, Id: Id },
                     error: function () {
-                        swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                        swal("Erreur de connexion !", "Vérifier votre connexion internet ‼", "error");
                     },
                     success: function () {
-                        swal("Modification a été effectué avec succès", "Bienvenu dans Box-Covid !", "success");
+                        swal("Modification a été effectué avec succès ✔", "Bienvenu dans Box-Covid !", "success");
                         setTimeout(() => {
                             window.location.replace("doctors.html");
                         }, 3000);
@@ -51,10 +50,10 @@ $(document).ready(function () {
 
 
             } else {
-                swal("Mot de passe est incorrect !", "Veuillez vérifier votre mot de passe", "error");
+                swal("Mot de passe incorrect !", "Veuillez vérifier votre mot de passe 😕", "error");
             }
         } else {
-            swal("Erreur de saisie !", "Veuillez vérifier vos champs", "error");
+            swal("Erreur de saisie !", "Veuillez vérifier vos champs 😕", "error");
         }
 
     })

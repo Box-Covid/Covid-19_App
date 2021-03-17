@@ -68,6 +68,29 @@ body {
 	overflow-x: hidden;
 	height: 100%;
 }
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #08b2c9;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #08b2c9;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
 h1,
 h2,
 h3,

@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	// Bar Chart
-	var idpatient = 1
+	var idpatient = localStorage.getItem('id');
 
 	$.ajax({
 		type: "POST",
@@ -9,13 +9,13 @@ $(document).ready(function () {
 		success: function (data) {
 			var dated=data[0].DateMess;
 			var datedebut=dated.substr(0,10);
-			var datef=data[18].DateMess;
+			var datef=data[1].DateMess;
 			var datefin=datef.substr(0,10);
 			console.log(datefin);
 			console.log(datedebut);
 			for(let i=0; i<19; i++)
 			{
-				var aux= ""
+				var aux= "";
 				aux=data[i].DateMess;
 				data[i].DateMess=aux.substring(11,16);
 			}
@@ -151,13 +151,8 @@ $(document).ready(function () {
 			});
 
 
-
-
-
-
 		}, error: function (data) {
-			console.log()
-			// swal("Check your connexion to internet!!", "Try again!", "error");
+			swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
 		}
 	});
 
@@ -218,7 +213,7 @@ $(document).ready(function () {
 
             
         },error:function(data){
-            swal("Check your connexion to internet!!", "Try again!", "error");
+			swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
         }
     });
 
@@ -276,7 +271,7 @@ $(document).ready(function () {
 
             
         },error:function(data){
-            swal("Check your connexion to internet!!", "Try again!", "error");
+			swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
         }
     });
 	/*	var barChartData = {
