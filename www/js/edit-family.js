@@ -3,7 +3,7 @@ $(document).ready(function () {
     var Id = localStorage.getItem("id");
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/idPat",
+        url: "http://192.168.43.69:1880/idFamily",
         data: { Id: Id },
         error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
@@ -23,28 +23,27 @@ $(document).ready(function () {
         var prenom = $("#prenom").val();
         var nom = $("#nom").val();
         var username = $("#usern").val();
-        var dateN = $("#dateN").val();
         var mdp = $("#mdp").val();
         var Cmdp = $("#cMdp").val();
         var tel = $("#telNum").val();
 
         event.preventDefault();
 
-        if ($.trim(dateN).length != 0 && ($.trim(prenom).length != 0) && ($.trim(nom).length != 0) && ($.trim(dateN).length != 0) && ($.trim(username).length != 0) && ($.trim(tel).length != 0)) {
+        if (($.trim(prenom).length != 0) && ($.trim(nom).length != 0) && ($.trim(username).length != 0) && ($.trim(tel).length != 0)) {
             if (mdp == Cmdp && ($.trim(mdp).length >= 8)) {
 
                 $.ajax({
                     type: "POST",
-                    url: "http://192.168.43.69:1880/editPat",
+                    url: "http://192.168.43.69:1880/editFamily",
                     timeout: 1000,
-                    data: { prenom: prenom, nom: nom, dateN: dateN, username: username, tel: tel, pwd: mdp, Id: Id },
+                    data: { prenom: prenom, nom: nom, username: username, tel: tel, pwd: mdp, Id: Id },
                     error: function () {
                         swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                     },
                     success: function () {
                         swal("Modification a été effectué avec succès ✔", "Bienvenu dans Box-Covid ! 😁", "success");
                         setTimeout(() => {
-                            window.location.replace("index-2.html");
+                            window.location.replace("index-3.html");
                         }, 3000);
                     }
                 })

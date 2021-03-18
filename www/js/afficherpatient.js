@@ -19,6 +19,7 @@ $(document).ready(function () {
 
                     $(document).on('click', '.profile', function (event) {
                         idMod = $(event.target).attr("id");
+                        console.log(idMod);
                         localStorage.setItem('idEdit', idMod);
                         //window.location.href = "profile.html";
                         //alert(idMod);
@@ -31,6 +32,7 @@ $(document).ready(function () {
                     $(document).on('click', '.supprimer', function (event) {
 
                         var idSupp = $(event.target).attr("id");
+                        console.log(idSupp);
                         $.ajax
                             ({
                                 success: function () {

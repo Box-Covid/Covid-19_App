@@ -18,6 +18,7 @@ $(document).ready(function () {
             $("#tel").text(data[0].Num);
             $("#dateNaiss").text(ch);
             $("#sexe").text(data[0].Sexe);
+            $("#Dr").text("Dr. "+data[0].FirstnameDr+" "+data[0].LastnameDr);
         }
     });
 })

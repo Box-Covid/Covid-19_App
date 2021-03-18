@@ -3,7 +3,7 @@ $(document).ready(function () {
         var username = $("#user").val();
         var password = $("#pwd").val();
         var test = true;
-       // var myPassword = "myPassword";
+        // var myPassword = "myPassword";
 
         if (($.trim(username).length == 0) || ($.trim(password).length == 0)) {
             test = false;
@@ -12,21 +12,21 @@ $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 url: "http://192.168.43.69:1880/userDoctor",
-                
+
                 data: { username: username },
                 success: function (data) {
                     if (data == "") {
                         $.ajax({
                             type: "POST",
                             url: "http://192.168.43.69:1880/userPatient",
-                            
+
                             data: { username: username },
                             success: function (data) {
                                 if (data == "") {
                                     $.ajax({
                                         type: "POST",
                                         url: "http://192.168.43.69:1880/userFamilyMember",
-                                       
+
                                         data: { username: username },
                                         success: function (data) {
                                             if (data == "") {
@@ -41,11 +41,11 @@ $(document).ready(function () {
                                                     }, success: function (data) {
                                                         if (data == "") {
                                                             swal("Erreur de saisie !", "Username inscorrect !", "error");
-                                                        }else{
+                                                        } else {
                                                             $.ajax({
                                                                 type: "POST",
                                                                 url: "http://192.168.43.69:1880/pwdFamily",
-                                                               
+
                                                                 data: { username: username },
                                                                 error: function () {
                                                                     swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
@@ -53,6 +53,7 @@ $(document).ready(function () {
                                                                 success: function (data) {
                                                                     if (data[0].password == password) {
                                                                         var y = data[0].Id;
+                                                                        var idP_M = data[0].idP;
                                                                         var mot = y.toString();
                                                                         const Toast = Swal.mixin({
                                                                             toast: true,
@@ -62,9 +63,10 @@ $(document).ready(function () {
                                                                         });
                                                                         Toast.fire({
                                                                             type: 'success',
-                                                                            title: 'Connexion réussie Mme/M. '+data[0].Firstname+" "+data[0].Lastname+" !"
+                                                                            title: 'Connexion réussie Mme/M. ' + data[0].Firstname + " " + data[0].Lastname + " !"
                                                                         }).then(() => {
                                                                             localStorage.setItem("id", mot);
+                                                                            localStorage.setItem("idEdit", idP_M);
                                                                             window.location.replace("index-3.html");
                                                                         });
                                                                     } else {
@@ -84,7 +86,7 @@ $(document).ready(function () {
                                     $.ajax({
                                         type: "POST",
                                         url: "http://192.168.43.69:1880/pwdPatient",
-                                       
+
                                         data: { username: username },
                                         error: function () {
                                             swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
@@ -101,7 +103,7 @@ $(document).ready(function () {
                                                 });
                                                 Toast.fire({
                                                     type: 'success',
-                                                    title: 'Connexion réussie Mme/M. ' +data[0].Firstname+" "+data[0].Lastname+" !"
+                                                    title: 'Connexion réussie Mme/M. ' + data[0].Firstname + " " + data[0].Lastname + " !"
                                                 }).then(() => {
                                                     localStorage.setItem("id", mot);
                                                     window.location.replace("index-2.html");
@@ -134,7 +136,7 @@ $(document).ready(function () {
                                     });
                                     Toast.fire({
                                         type: 'success',
-                                        title: 'Connexion réussie Dr. '+data[0].Firstname+" "+data[0].Lastname+" !"
+                                        title: 'Connexion réussie Dr. ' + data[0].Firstname + " " + data[0].Lastname + " !"
                                     }).then(() => {
                                         localStorage.setItem("id", mot);
                                         window.location.replace("doctors.html");
@@ -144,12 +146,12 @@ $(document).ready(function () {
                                 }
                             }
                         })
-                    }else{
+                    } else {
                         swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
                     }
 
                 },
-                error: function (){
+                error: function () {
                     swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
                 }
             })
