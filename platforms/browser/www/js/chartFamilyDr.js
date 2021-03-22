@@ -11,15 +11,13 @@ $(document).ready(function () {
 			var datedebut=dated.substr(0,10);
 			var datef=data[1].DateMess;
 			var datefin=datef.substr(0,10);
-			console.log(datefin);
-			console.log(datedebut);
+			
 			for(let i=0; i<19; i++)
 			{
 				var aux= "";
 				aux=data[i].DateMess;
 				data[i].DateMess=aux.substring(11,16);
 			}
-			console.log(data);
 
 			var temp = data[0].Temp + "°C";
 			$('.temp').html(temp);
@@ -27,6 +25,18 @@ $(document).ready(function () {
 			var hum = data[0].Hum + "%";
 			$('.humidity').html(hum);
 
+			var press = data[0].Press + "%";
+			$('.pressure').html(press);
+
+			var tempCorp = data[0].TempBody + "°C";
+			$('.TempCorp').html(tempCorp);
+
+			var HeartRate = data[0].HeartRate + "bpm";
+			$('.HR').html(HeartRate);
+
+			var spo2 = data[0].spo2 + "%";
+			$('.spo2').html(spo2);
+			
 			//Date mesures
 			$(".datedebut").append(
 				 "<i>"+"du "+datedebut+" au "+"</i>" );

@@ -3,6 +3,9 @@
 $(document).ready(function () {
 
   $("#BtnFamily").click(function () {
+    function emailIsValid(username) {
+      return /\S+@\S+\.\S+/.test(username);
+    }
     var prenom = $("#firstname").val();
     var nom = $("#lastname").val();
     var username = $("#username").val();
@@ -14,6 +17,13 @@ $(document).ready(function () {
 
     if (($.trim(prenom).length == 0) || ($.trim(nom).length == 0) || ($.trim(username).length == 0) || ($.trim(tel).length == 0) || ($.trim(pwd).length < 8) || ($.trim(idP).length < 8)) {
       test = false;
+    } else if (!emailIsValid(username)) {
+      swal("Erreur de saisie!", "Veuillez saisir un email valide 📧", "error");
+      test = false;
+      setTimeout(() => {
+
+      }, 3000);
+
     }
     else if (test == true) {
       event.preventDefault();

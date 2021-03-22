@@ -1,6 +1,33 @@
 
 $(document).ready(function () {
     var idDr = localStorage.getItem("id");
+
+    $.ajax({
+        type: "POST",
+        url: "http://192.168.43.69:1880/nbrArch",
+        //timeout:1000,  
+        data: { id: idDr },
+        error: function () {
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+        },
+        success: function (data) {
+            $("#badge-Arch").text(data[0].nbrArch);
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: "http://192.168.43.69:1880/nbrPatActif",
+        //timeout:1000,  
+        data: { id: idDr },
+        error: function () {
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+        },
+        success: function (data) {
+            $("#nbrPat").text(data[0].nbrPat);
+        }
+    });
+
     $.ajax({
         type: "POST",
         url: "http://192.168.43.69:1880/affichepatients",

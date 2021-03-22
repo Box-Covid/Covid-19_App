@@ -18,9 +18,10 @@ $(document).ready(function () {
     })
   
 
-
-
   $("#BtnPatient").click(function () {
+    function emailIsValid (username) {
+      return /\S+@\S+\.\S+/.test(username);
+      }
     var prenom = $("#firstname").val();
     var nom = $("#lastname").val();
     var dateN = $("#BirthDate").val();
@@ -31,11 +32,19 @@ $(document).ready(function () {
     var pwd = $("#pwd").val();
 
     var test = true;
+    
 
-    if (($.trim(prenom).length == 0) || ($.trim(nom).length == 0) || ($.trim(dateN).length == 0) || ($.trim(sexe).length == 0) || ($.trim(username).length == 0) || ($.trim(tel).length == 0) || ($.trim(idD).length == 0) || ($.trim(pwd).length < 8)) {
+    if (($.trim(prenom).length == 0) || ($.trim(nom).length == 0) || ($.trim(dateN).length == 0) || ($.trim(sexe).length == 0) || ($.trim(tel).length == 0) || ($.trim(idD).length == 0) || ($.trim(pwd).length < 8)) {
       test = false;
-    }
-    else if (test == true) {
+      
+    }else if (!emailIsValid(username)) {
+      swal("Erreur de saisie!", "Veuillez saisir un email valide 📧", "error");
+      test = false;
+      setTimeout(() => {
+        
+      }, 3000);
+    
+    }else if (test == true) {
       event.preventDefault();
       $.ajax({
         type: "POST",  //Request type
@@ -93,10 +102,7 @@ $(document).ready(function () {
   // return /\d/.test(t);
   // }
 
-  // function emailIsValid (email) {
-  // return /\S+@\S+\.\S+/.test(email);
-  // }
-
+ 
 
 
 

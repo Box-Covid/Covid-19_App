@@ -68,6 +68,29 @@ body {
 	overflow-x: hidden;
 	height: 100%;
 }
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #08b2c9;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #08b2c9;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
 h1,
 h2,
 h3,
@@ -1136,7 +1159,7 @@ textarea.form-control {
 	font-size: 50px;
 	text-align: center;
 	line-height: 65px;
-	background: #009efb;
+	background: #dc3545;
 	border-radius: 50%;
 	font-size: 40px;
 	height: 65px;
@@ -1149,11 +1172,12 @@ textarea.form-control {
 	font-size: 50px;
 	text-align: center;
 	line-height: 65px;
-	background: #55ce63;
+	background: #009efb;
 	border-radius: 50%;
 	font-size: 40px;
 	height: 65px;
 }
+
 .dash-widget-bg3 {
 	width: 65px;
 	float: left;
@@ -1162,7 +1186,7 @@ textarea.form-control {
 	font-size: 50px;
 	text-align: center;
 	line-height: 65px;
-	background: #7a92a3;
+	background: #76d4e3;
 	border-radius: 50%;
 	font-size: 40px;
 	height: 65px;
@@ -1175,7 +1199,33 @@ textarea.form-control {
 	font-size: 50px;
 	text-align: center;
 	line-height: 65px;
+	background: #ff8129;
+	border-radius: 50%;
+	font-size: 40px;
+	height: 65px;
+}
+.dash-widget-bg5 {
+	width: 65px;
+	float: left;
+	color: #fff;
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	line-height: 65px;
 	background: #ffbc35;
+	border-radius: 50%;
+	font-size: 40px;
+	height: 65px;
+}
+.dash-widget-bg6 {
+	width: 65px;
+	float: left;
+	color: #fff;
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	line-height: 65px;
+	background: #55ce63;
 	border-radius: 50%;
 	font-size: 40px;
 	height: 65px;
@@ -1378,28 +1428,42 @@ ul.chat-user-total li i.old-users {
 	margin-left: 5px;
 }
 .dash-widget-info > span.widget-title1 {
-	background: #009efb;
+	background: #dc3545;
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 4px;
 	font-size: 13px;
 }
 .dash-widget-info > span.widget-title2 {
-	background: #55ce63;
+	background: #009efb;
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 4px;
 	font-size: 13px;
 }
 .dash-widget-info > span.widget-title3 {
-	background: #7a92a3;
+	background: #76d4e3;
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 4px;
 	font-size: 13px;
 }
 .dash-widget-info > span.widget-title4 {
+	background: #ff8129;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 13px;
+}
+.dash-widget-info > span.widget-title5 {
 	background: #ffbc35;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 13px;
+}
+.dash-widget-info > span.widget-title6 {
+	background: #55ce63;
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 4px;

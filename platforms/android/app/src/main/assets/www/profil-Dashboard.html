@@ -9,10 +9,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <title>Tableau de bôrd patient</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="js/sweetalert/sweetalert.css" rel="stylesheet">
     <style>
@@ -178,12 +179,8 @@
         <div class="page-wrapper">
             <div class="content">
                 <a href="doctors.html"> <i class="fa fa-arrow-left" style="font-size: 25px;"></i></a>
-                <div class="row">
-                    <div class="col-sm-7 col-6">
-                        <br>
-                        <h4 class="page-title">Profil</h4>
-                    </div>
-                </div>
+                <br>
+                <br>
                 <div class="card-box profile-header">
                     <div class="row">
                         <div class="col-md-12">
@@ -197,12 +194,11 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="profile-info-left">
+                                                <h3 class="user-name m-t-0 mb-0" id="nompatient"></h3>
                                                 <br>
-                                                <br>
-                                                <h3 class="user-name m-t-0 mb-0" id="nompatient"
-                                                    style="font-family:verdana;"></h3>
-                                                <br>
-                                                <small class="text-muted h5" id="role"></small>
+                                                <small class="text-muted h5" id="role"> 🧑 Patient </small>
+                                                <div class="staff-msg"><a href="edit medecin.html"
+                                                    class="btn btn-danger"><i class="fa fa-trash"></i> Supprimer </a></div>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
@@ -253,11 +249,10 @@
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
                                         <div class="dash-widget">
-                                            <span class="dash-widget-bg1"> <i class="fa fa-thermometer-half"></i>
+                                            <span class="dash-widget-bg1"> <i class="fa fa-thermometer-full"></i>
                                             </span>
                                             <div class="dash-widget-info text-right">
                                                 <h6 class="temp"></h6>
-
                                                 <span class="widget-title1">Température<i class="fa fa-home"></i></span>
                                             </div>
                                         </div>
@@ -268,6 +263,44 @@
                                             <div class="dash-widget-info text-right">
                                                 <h6 class=" humidity"></h6>
                                                 <span class="widget-title2">Humidité <i class="fa fa-home"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+                                        <div class="dash-widget">
+                                            <span class="dash-widget-bg3"><i class="fa fa-cloud"></i></span>
+                                            <div class="dash-widget-info text-right">
+                                                <h6 class="pressure"></h6>
+                                                <span class="widget-title3">Pression <i class="fa fa-home"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+                                        <div class="dash-widget">
+                                            <span class="dash-widget-bg4"><i class="fa fa-thermometer-half"></i></span>
+                                            <div class="dash-widget-info text-right">
+                                                <h6 class="TempCorp"></h6>
+                                                <span class="widget-title4">Température corporelle <i class="fa fa-user"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+                                        <div class="dash-widget">
+                                            <span class="dash-widget-bg5"><i class="fa fa-heartbeat"></i></span>
+                                            <div class="dash-widget-info text-right">
+                                                <h6 class="HR"></h6>
+                                                <span class="widget-title5">Rythme cardiaque
+                                                    <i class="fa fa-user"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+                                        <div class="dash-widget">
+                                            <span class="dash-widget-bg6"><i class="fa fa-tree"></i></span>
+                                            <div class="dash-widget-info text-right">
+                                                <h6 class="spo2"></h6>
+                                                <span class="widget-title6">Saturation en oxygène (Spo2)
+                                                    <i class="fa fa-user"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -800,8 +833,10 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.slimscroll.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/moment.min.js"></script>
     <script src="js/Chart.bundle.js"></script>
-    <script src="js/chart.js"></script>
+    <script src="js/chartFamilyDr.js"></script>
     <script src="js/patient.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/Desactivate.js"></script>

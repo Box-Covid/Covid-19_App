@@ -19,13 +19,28 @@ $(document).ready(function () {
 				aux=data[i].DateMess;
 				data[i].DateMess=aux.substring(11,16);
 			}
-			console.log(data);
+			
+			if (data[0].Temp>30) {
+				navigator.vibrate(2000);
+			}
 
 			var temp = data[0].Temp + "°C";
 			$('.temp').html(temp);
 
 			var hum = data[0].Hum + "%";
 			$('.humidity').html(hum);
+
+			var press = data[0].Press + "%";
+			$('.pressure').html(press);
+
+			var tempCorp = data[0].TempBody + "°C";
+			$('.TempCorp').html(tempCorp);
+
+			var HeartRate = data[0].HeartRate + "bpm";
+			$('.HR').html(HeartRate);
+
+			var spo2 = data[0].spo2 + "%";
+			$('.spo2').html(spo2);
 
 			//Date mesures
 			$(".datedebut").append(

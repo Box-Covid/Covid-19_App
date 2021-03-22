@@ -1,11 +1,39 @@
 
 $(document).ready(function () {
+    var idDr = localStorage.getItem("id");
+
+    $.ajax({
+        type: "POST",
+        url: "http://192.168.43.69:1880/nbrArch",
+        //timeout:1000,  
+        data: { id: idDr },
+        error: function () {
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+        },
+        success: function (data) {
+            $("#badge-Arch").text(data[0].nbrArch);
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: "http://192.168.43.69:1880/nbrPatActif",
+        //timeout:1000,  
+        data: { id: idDr },
+        error: function () {
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+        },
+        success: function (data) {
+            $("#nbrPat").text(data[0].nbrPat);
+        }
+    });
 
     $.ajax({
         type: "POST",
         url: "http://192.168.43.69:1880/affichepatients",
+        data: { idDr: idDr },
         error: function () {
-
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
         },
         success: function (data) {
             // console.log(data.length);
@@ -14,10 +42,11 @@ $(document).ready(function () {
             } else {
                 for (var i = 0; i < data.length; i++) {
 
-                    $("#patient").append('<div class="col-md-4 col-sm-4 col-lg-3"><div class="profile-widget"><div class="doctor-img"><a class="avatar"><img class="avatar" src="img/user-07.png" alt=""></a></div><div class="dropdown profile-action"><a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a><div class="dropdown-menu dropdown-menu-right"><a class="profile" style="cursor: pointer; margin-left: 23px;" id="' + data[i].Id + '" href="profile.html"><i class="fa fa-user m-r-5" style="color:yellowgreen;"></i> Profile</a><br><a data-toggle="modal" data-target="#delete_doctor" style="margin-left: 23px; cursor: pointer;" class="supprimer"><i id="' + data[i].Id + '" class="fa fa-trash-o m-r-5" style="color:red;"></i> Delete</a></div></div><label style="display : none;" id="id">' + data[i].Id + '</label><h4 class="doctor-name text-ellipsis"><a id="nom" style="font-family:verdana;"> <i class="fa fa-user"></i>' + " " + data[i].Firstname + '' + " " + '' + data[i].Lastname + '</a></h4><div class="user-country"><i class="fa fa-phone" id="num">' + " " + '' + data[i].Num + '</i></div></div></div>');
+                    $("#patient").append('<div class="col-md-4 col-sm-4 col-lg-3"><div class="profile-widget"><div class="doctor-img"><a class="avatar" href="profile.html"><img class="avatar" src="img/user-07.png" alt=""></a></div><div class="dropdown profile-action"><a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a><div class="dropdown-menu dropdown-menu-right"><a class="profile" style="cursor: pointer; margin-left: 23px;" id="' + data[i].Id + '" href="profile.html"><i id="' + data[i].Id + '" class="fa fa-user m-r-5" style="color:yellowgreen;"></i> Profil</a><br><a class="supprimer" style="cursor: pointer; margin-left: 23px;" id="' + data[i].Id + '"><i id="' + data[i].Id + '" class="fa fa-trash-o m-r-5" style="color:red;"></i> Supprimer</a></div></div><label style="display : none;" id="id">' + data[i].Id + '</label><h4 class="doctor-name text-ellipsis"><a id="nom" style="font-family:verdana;"> <i class="fa fa-user"></i>' + " " + data[i].Firstname + '' + " " + '' + data[i].Lastname + '</a></h4><div class="user-country"><i class="fa fa-phone" id="num">' + " " + '' + data[i].Num + '</i></div></div></div>');
 
                     $(document).on('click', '.profile', function (event) {
                         idMod = $(event.target).attr("id");
+                        console.log(idMod);
                         localStorage.setItem('idEdit', idMod);
                         //window.location.href = "profile.html";
                         //alert(idMod);
@@ -30,6 +59,7 @@ $(document).ready(function () {
                     $(document).on('click', '.supprimer', function (event) {
 
                         var idSupp = $(event.target).attr("id");
+                        console.log(idSupp);
                         $.ajax
                             ({
                                 success: function () {

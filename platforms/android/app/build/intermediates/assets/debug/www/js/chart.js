@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	// Bar Chart
-	var idpatient = 1
+	var idpatient = localStorage.getItem('id');
 
 	$.ajax({
 		type: "POST",
@@ -9,23 +9,38 @@ $(document).ready(function () {
 		success: function (data) {
 			var dated=data[0].DateMess;
 			var datedebut=dated.substr(0,10);
-			var datef=data[18].DateMess;
+			var datef=data[1].DateMess;
 			var datefin=datef.substr(0,10);
 			console.log(datefin);
 			console.log(datedebut);
 			for(let i=0; i<19; i++)
 			{
-				var aux= ""
+				var aux= "";
 				aux=data[i].DateMess;
 				data[i].DateMess=aux.substring(11,16);
 			}
-			console.log(data);
+			
+			if (data[0].Temp>30) {
+				navigator.vibrate(2000);
+			}
 
 			var temp = data[0].Temp + "°C";
 			$('.temp').html(temp);
 
 			var hum = data[0].Hum + "%";
 			$('.humidity').html(hum);
+
+			var press = data[0].Press + "%";
+			$('.pressure').html(press);
+
+			var tempCorp = data[0].TempBody + "°C";
+			$('.TempCorp').html(tempCorp);
+
+			var HeartRate = data[0].HeartRate + "bpm";
+			$('.HR').html(HeartRate);
+
+			var spo2 = data[0].spo2 + "%";
+			$('.spo2').html(spo2);
 
 			//Date mesures
 			$(".datedebut").append(
@@ -151,13 +166,8 @@ $(document).ready(function () {
 			});
 
 
-
-
-
-
 		}, error: function (data) {
-			console.log()
-			// swal("Check your connexion to internet!!", "Try again!", "error");
+			swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
 		}
 	});
 
@@ -218,7 +228,7 @@ $(document).ready(function () {
 
             
         },error:function(data){
-            swal("Check your connexion to internet!!", "Try again!", "error");
+			swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
         }
     });
 
@@ -276,7 +286,7 @@ $(document).ready(function () {
 
             
         },error:function(data){
-            swal("Check your connexion to internet!!", "Try again!", "error");
+			swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
         }
     });
 	/*	var barChartData = {

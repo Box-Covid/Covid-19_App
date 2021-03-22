@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    
+
     <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style type="text/css">
@@ -24,11 +24,11 @@
             transition: transform 0.3s;
         }
 
-        .humidity, 
-        .temp {
+        .humidity,
+        .temp, .pressure, .TempCorp, .HR, .spo2 {
             font-size: 40px;
         }
-   
+
 
         .inner-main,
         .inner-sidebar {
@@ -189,7 +189,7 @@
                         <span>Bienvenu M/Mme</span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="edit-patient.html"> <i class="fa fa-edit"> </i> Modifier
+                        <a class="dropdown-item" href="edit-FamilyMember.html"> <i class="fa fa-edit"> </i> Modifier
                             profil</a>
                         <a class="dropdown-item text-danger desac" style="cursor: pointer;"><i
                                 class="fa fa-minus-circle"> </i> Désactiver compte</a>
@@ -202,7 +202,8 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
                         class="fa fa-ellipsis-v"></i></a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="edit-patient.html"> <i class="fa fa-edit"> </i> Modifier profil</a>
+                    <a class="dropdown-item" href="edit-FamilyMember.html"> <i class="fa fa-edit"> </i> Modifier
+                        profil</a>
                     <a class="dropdown-item text-danger desac" style="cursor: pointer;"><i class="fa fa-minus-circle">
                         </i> Désactiver compte</a>
                     <a class="dropdown-item logout" style="cursor: pointer;"> <i class="fa fa-sign-out"></i>
@@ -224,21 +225,6 @@
         </div>
         <div class="page-wrapper">
             <div class="content">
-              
-                <div class="row">
-
-                    <div class="col-sm-7 col-6">
-
-                        <br>
-                        <h4 class="page-title">Profil</h4>
-                    </div>
-
-                    <div class="col-sm-5 col-6 text-right m-b-30">
-                        <a href="edit-patient.html" class="btn btn-primary btn-rounded"><i class="fa fa-pencil"></i>
-                            Modifier
-                            Profil</a>
-                    </div>
-                </div>
                 <div class="card-box profile-header">
                     <div class="row">
                         <div class="col-md-12">
@@ -250,14 +236,17 @@
                                 </div>
                                 <div class="profile-basic">
                                     <br>
-                                 
+
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="profile-info-left">
                                                 <h3 class="user-name m-t-0 mb-0" id="user-name"></h3>
                                                 <br>
-                                                <small class="text-muted h5" id="role"></small>
-                                               <br>
+                                                <small class="text-muted h5" id="role">👩‍🦳 Membre de famille</small>
+                                                <div class="staff-msg"><a href="edit-FamilyMember.html"
+                                                        class="btn btn-outline-primary"><i class="fa fa-pencil"></i>
+                                                        Modifier
+                                                        profil</a></div>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
@@ -270,14 +259,10 @@
                                                     <span class="title">Username:</span>
                                                     <span class="text" id="email"></span>
                                                 </li>
-                                                <li>
-                                                    <span class="title">Date de naissance:</span>
-                                                    <span class="text" id="dateNaiss"></span>
-                                                </li>
                                                 <br>
                                                 <li>
-                                                    <span class="title">Sexe:</span>
-                                                    <span class="text" id="sexe"></span>
+                                                    <span class="title">Votre patient:</span>
+                                                    <span class="text" id="pat"></span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -292,7 +277,7 @@
                         <li class="nav-item"><a class="nav-link active" href="#about-cont" data-toggle="tab">Mon tableau
                                 de bôrd</a></li>
 
-                       
+
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane show active" id="about-cont">
@@ -301,13 +286,11 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
                                             <div class="dash-widget">
-                                                <span class="dash-widget-bg1"> <i class="fa fa-thermometer-half"></i>
+                                                <span class="dash-widget-bg1"> <i class="fa fa-thermometer-full"></i>
                                                 </span>
                                                 <div class="dash-widget-info text-right">
                                                     <h6 class="temp"></h6>
-
-                                                    <span class="widget-title1">Température<i
-                                                            class="fa fa-home"></i></span>
+                                                    <span class="widget-title1">Température<i class="fa fa-home"></i></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -316,8 +299,45 @@
                                                 <span class="dash-widget-bg2"><i class="fa fa-tint"></i></span>
                                                 <div class="dash-widget-info text-right">
                                                     <h6 class=" humidity"></h6>
-                                                    <span class="widget-title2">Humidité <i
-                                                            class="fa fa-home"></i></span>
+                                                    <span class="widget-title2">Humidité <i class="fa fa-home"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+                                            <div class="dash-widget">
+                                                <span class="dash-widget-bg3"><i class="fa fa-cloud"></i></span>
+                                                <div class="dash-widget-info text-right">
+                                                    <h6 class="pressure"></h6>
+                                                    <span class="widget-title3">Pression <i class="fa fa-home"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+                                            <div class="dash-widget">
+                                                <span class="dash-widget-bg4"><i class="fa fa-thermometer-half"></i></span>
+                                                <div class="dash-widget-info text-right">
+                                                    <h6 class="TempCorp"></h6>
+                                                    <span class="widget-title4">Température corporelle <i class="fa fa-user"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+                                            <div class="dash-widget">
+                                                <span class="dash-widget-bg5"><i class="fa fa-heartbeat"></i></span>
+                                                <div class="dash-widget-info text-right">
+                                                    <h6 class="HR"></h6>
+                                                    <span class="widget-title5">Rythme cardiaque
+                                                        <i class="fa fa-user"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+                                            <div class="dash-widget">
+                                                <span class="dash-widget-bg6"><i class="fa fa-tree"></i></span>
+                                                <div class="dash-widget-info text-right">
+                                                    <h6 class="spo2"></h6>
+                                                    <span class="widget-title6">Saturation en oxygène (Spo2)
+                                                        <i class="fa fa-user"></i></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -384,20 +404,11 @@
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h4 class="card-title d-inline-block">Prescription de médicaments
-                                                    </h4> 
+                                                    </h4>
                                                 </div>
                                                 <div class="card-body p-0">
                                                     <div class="table-responsive">
-                                                        <table class="table mb-0">
-                                                            <thead class="d-none">
-                                                                <tr>
-                                                                    <th>Nom médicament</th>
-                                                                    <th>Dose</th>
-                                                                    <th>Nbr de prises</th>
-                                                                    <th>Détail</th>
-                                                                    <th class="text-right">Status</th>
-                                                                </tr>
-                                                            </thead>
+                                                        <table class="table mb-0 table-hover">
                                                             <tbody class="medicament">
                                                                 <!--   <tr>
                                                                     <td style="min-width: 200px;">
@@ -489,7 +500,7 @@
                                                 </div>
                                                 <div class="card-block">
                                                     <div class="table-responsive">
-                                                        <table class="table mb-0 new-patient-table">
+                                                        <table class="table mb-0 new-patient-table table-hover">
                                                             <tbody class="maladie">
                                                                 <!--<tr>
                                                                     <td>
@@ -840,13 +851,13 @@
     <div class="sidebar-overlay" data-reff=""></div>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/fetchInfo.js"></script>
+    <script src="js/SelectInfoFamily.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/Desactivate.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.slimscroll.js"></script>
     <script src="js/Chart.bundle.js"></script>
-    <script src="js/chart.js"></script>
+    <script src="js/chartFamilyDr.js"></script>
     <script src="js/sweetalert/jquery.sweet-alert.custom.js"></script>
     <script src="js/sweetalert/sweetalert.min.js"></script>
     <script src="js/app.js"></script>

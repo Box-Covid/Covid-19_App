@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="js/sweetalert/sweetalert.css" rel="stylesheet">
     <style>
@@ -178,12 +179,8 @@
         <div class="page-wrapper">
             <div class="content">
                 <a href="doctors.html"> <i class="fa fa-arrow-left" style="font-size: 25px;"></i></a>
-                <div class="row">
-                    <div class="col-sm-7 col-6">
-                        <br>
-                        <h4 class="page-title">Profil</h4>
-                    </div>
-                </div>
+                <br>
+                <br>
                 <div class="card-box profile-header">
                     <div class="row">
                         <div class="col-md-12">
@@ -197,17 +194,16 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="profile-info-left">
+                                                <h3 class="user-name m-t-0 mb-0" id="nompatient"></h3>
                                                 <br>
-                                                <br>
-                                                <h3 class="user-name m-t-0 mb-0" id="nompatient"
-                                                    style="font-family:verdana;"></h3>
-                                                <br>
-                                                <small class="text-muted h5" id="role"></small>
+                                                <small class="text-muted h5" id="role"> 🧑 Patient </small>
+                                                <div class="staff-msg"><a href="edit medecin.html"
+                                                    class="btn btn-danger"><i class="fa fa-trash"></i> Supprimer </a></div>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
                                             <ul class="personal-info">
-                                                <br>
+                                              <br>
                                                 <li>
                                                     <span class="title">Tel:</span>
                                                     <span class="text" id="tel"><a href="#"></a></span>
@@ -752,6 +748,10 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.slimscroll.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/Chart.bundle.js"></script>
     <script src="js/affichemaladies.js"></script>
     <script src="js/affichemedicament.js"></script>
