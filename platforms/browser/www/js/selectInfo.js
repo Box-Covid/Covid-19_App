@@ -13,6 +13,7 @@ $(document).ready(function () {
             var ch = dateN.substr(0, 10);
             // var nowDate = new Date(parseInt(dateN.substr(6)));
             // result += nowDate.format("dd/mm/yyyy") + " : dd/mm/yyyy";
+            $("#bienvenu").text("Bienvenu M/Mme. " + data[0].Firstname + " " + data[0].Lastname);
             $("#nompatient").text(data[0].Firstname + " " + data[0].Lastname);
             $("#email").text(data[0].Username);
             $("#tel").text(data[0].Num);

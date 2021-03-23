@@ -182,7 +182,7 @@ $(document).ready(function () {
         success:function(data) {
 			//médicament
 			$(".medicament").append(
-				"<tr>" +
+				'<tr class="table-primary">' +
 
 					"<td >" +
 					"<h5 >" + "Nom médicament" +"</h5>" +
@@ -246,7 +246,7 @@ $(document).ready(function () {
 						// maladie
 
 						$(".maladie").append(
-							"<tr>" +
+							'<tr class="table-success">' +
 								"<td >" +
 								"<h5 >" + "Nom maladie" +"</h5>" +
 								"</td>" +
