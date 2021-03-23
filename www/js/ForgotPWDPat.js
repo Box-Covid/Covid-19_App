@@ -3,14 +3,13 @@ $(document).ready(function () {
         function emailIsValid(username) {
           return /\S+@\S+\.\S+/.test(username);
         }
-
-        var emailPWD = $("#userEmail").val();
+        var emailPWD = $("#userPWDPat").val();
         event.preventDefault();
         if (emailIsValid(emailPWD)) {
            
             $.ajax({
                 type: "POST",
-                url: "http://192.168.43.69:1880/searchEmailDr",
+                url: "http://192.168.43.69:1880/searchEmailPat",
                 //timeout:1000,  
                 data: { emailpwd: emailPWD },
                 error: function () {
@@ -40,7 +39,6 @@ $(document).ready(function () {
             });
         } else {
             swal("Erreur de saisie !", "Veuillez saisir un email correcte ❌", "error");
-    
         }
     })
 })

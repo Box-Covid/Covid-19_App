@@ -4,13 +4,13 @@ $(document).ready(function () {
           return /\S+@\S+\.\S+/.test(username);
         }
 
-        var emailPWD = $("#userEmail").val();
+        var emailPWD = $("#userpwdFM").val();
         event.preventDefault();
         if (emailIsValid(emailPWD)) {
            
             $.ajax({
                 type: "POST",
-                url: "http://192.168.43.69:1880/searchEmailDr",
+                url: "http://192.168.43.69:1880/searchEmailFM",
                 //timeout:1000,  
                 data: { emailpwd: emailPWD },
                 error: function () {

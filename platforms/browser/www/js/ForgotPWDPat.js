@@ -1,13 +1,12 @@
 $(document).ready(function () {
-    usernamePWD
     $("#reset").click(function () {
         function emailIsValid(username) {
           return /\S+@\S+\.\S+/.test(username);
         }
-
-        var emailPWD = $("#usernamePWD").val();
-
+        var emailPWD = $("#userPWDPat").val();
+        event.preventDefault();
         if (emailIsValid(emailPWD)) {
+           
             $.ajax({
                 type: "POST",
                 url: "http://192.168.43.69:1880/searchEmailPat",
@@ -19,6 +18,9 @@ $(document).ready(function () {
                 success: function (data) {
                     if (data == "") {
                         swal("Erreur email !", "L'email n'existe pas ou incorrect ❌", "error");
+                        setTimeout(() => {
+                            
+                        }, 3000);
                     } else {
                         $.ajax({
                             type: "POST",
