@@ -34,13 +34,15 @@ $(document).ready(function () {
                             error: function () {
                                 swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                             },
-                            success: function () {
+                            success: function (data) {
                                 Toast.fire({
                                     type: 'success',
                                     title: 'Votre mot de passe été envoyé avec succès ✔'
                                 }).then(() => {
                                     window.location.replace("index.html");
                                 });
+
+
                             }
                         });
                     }
