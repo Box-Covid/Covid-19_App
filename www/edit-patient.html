@@ -26,8 +26,8 @@
     <div class="main-wrapper">
         <div class="header">
             <div class="header-left">
-                <a href="index-2.html" class="logo">
-                    <img src="img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
+                <a href="" class="logo">
+                    <img src="img/logo1.png" width="35" height="35" alt=""> <span>Box-Covid</span>
                 </a>
             </div>
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -35,90 +35,19 @@
             <ul class="nav user-menu float-right">
                 <li class="nav-item dropdown d-none d-sm-block">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i>
-                        <span class="badge badge-pill bg-danger float-right">3</span></a>
+                        <span class="badge badge-pill bg-danger float-right" id="nb"></span></a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
                             <span>Notifications</span>
                         </div>
                         <div class="drop-scroll">
                             <ul class="notification-list">
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">
-                                                <img alt="John Doe" src="img/user.jpg" class="img-fluid rounded-circle">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">John Doe</span> added
-                                                    new task <span class="noti-title">Patient appointment booking</span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span>
-                                                    changed the task name <span class="noti-title">Appointment booking
-                                                        with payment gateway</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">L</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Misty Tison</span>
-                                                    added <span class="noti-title">Domenic Houston</span> and <span
-                                                        class="noti-title">Claire Mapes</span> to project <span
-                                                        class="noti-title">Doctor available module</span></p>
-                                                <p class="noti-time"><span class="notification-time">8 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">G</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Rolland Webber</span>
-                                                    completed task <span class="noti-title">Patient and Doctor video
-                                                        conferencing</span></p>
-                                                <p class="noti-time"><span class="notification-time">12 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span>
-                                                    added new task <span class="noti-title">Private chat module</span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">2 days ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
+                                <li class="notification-message" id="img">
+
                                 </li>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="activities.html">View all Notifications</a>
                         </div>
                     </div>
                 </li>
@@ -159,8 +88,11 @@
                         <li>
                             <a href="index-2.html"><i class="fa fa-dashboard"></i> <span>Tableau de bôrd</span></a>
                         </li>
+                        <li>
+                            <a href="message.html"><i class="fa fa-comments"></i> <span>Message(s)</span></a>
+                        </li>
                         <li class="active">
-                            <a href="edit-patient.html"><i class="fa fa-user-md"></i> <span>Modifier profil</span></a>
+                            <a href="edit-patient.html"><i class="fa fa-pencil"></i> <span>Modifier profil</span></a>
                         </li>
                     </ul>
                 </div>
@@ -169,8 +101,9 @@
         <div class="page-wrapper">
             <div class="content">
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-5">
-                        <h4 class="page-title" style="margin-bottom: 50px; font-family:verdana;"><b>Modifier profil</b></h4>
+                    <div class="col-lg-5 offset-lg-5">
+                        <h4 class="page-title" style="margin-bottom: 50px; font-family:verdana;"><b>Modifier profil</b>
+                        </h4>
                     </div>
                 </div>
                 <div class="row">
@@ -180,20 +113,23 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Prénom <span class="text-danger"></span></label>
-                                        <input class="form-control" type="text" id="prenom" style="font-family:verdana; color:#af533f;" required>
+                                        <input class="form-control" type="text" id="prenom"
+                                            style="font-family:verdana; color:#af533f;" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Nom</label>
-                                        <input class="form-control" type="text" id="nom" style="font-family:verdana; color:#af533f;" required>
+                                        <input class="form-control" type="text" id="nom"
+                                            style="font-family:verdana; color:#af533f;" required>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Username <span class="text-danger"></span></label>
-                                        <input class="form-control" id="usern" style="font-family:verdana; color:#af533f;" required>
+                                        <label>Email <span class="text-danger"></span></label>
+                                        <input class="form-control" id="usern"
+                                            style="font-family:verdana; color:#af533f;" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -208,27 +144,30 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Tel </label>
-                                        <input class="form-control" type="tel" id="telNum" style="font-family:verdana; color:#af533f;">
+                                        <input class="form-control" type="tel" id="telNum"
+                                            style="font-family:verdana; color:#af533f;">
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6" style="padding-bottom: 20px;">
                                     <label>Votre médecin </label>
-                                    <select class="form-control" required
-                                        style="font-family:verdana; color:#af533f;" id="medecin">
+                                    <select class="form-control" required style="font-family:verdana; color:#af533f;"
+                                        id="medecin">
                                     </select>
                                 </div>
-                          
+
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Mot de passe</label>
-                                        <input class="form-control" type="password" id="mdp" style="font-family:verdana; color:#af533f;" required>
+                                        <input class="form-control" type="password" id="mdp"
+                                            style="font-family:verdana; color:#af533f;" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Confirmer Mot de passe</label>
-                                        <input class="form-control" type="password" id="cMdp" style="font-family:verdana; color:#af533f;" required>
+                                        <input class="form-control" type="password" id="cMdp"
+                                            style="font-family:verdana; color:#af533f;" required>
                                     </div>
                                 </div>
                             </div>
@@ -469,6 +408,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/edit-patient.js"></script>
     <script src="js/selectInfo.js"></script>
+    <script src="js/chart.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/Desactivate.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -6,15 +6,17 @@ $(document).ready(function () {
         url: "http://192.168.43.69:1880/idDr",
         data: { Id: Id },
         error: function () {
-            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
         },
         success: function (data) {
-
+            
             $("#prenom").val(data[0].Firstname);
             $("#nom").val(data[0].Lastname);
             $("#usern").val(data[0].Username);
-            $("#mdp").val(data[0].password);            
+            $("#dateN").val(data[0].DateBirth);
+                       
             $("#telNum").val(data[0].Num);
+
         }
     });
     // On click on the button :

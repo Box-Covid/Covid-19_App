@@ -41,8 +41,6 @@ $(document).ready(function () {
                                 }).then(() => {
                                     window.location.replace("index.html");
                                 });
-
-
                             }
                         });
                     }

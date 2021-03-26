@@ -19,11 +19,10 @@ $(document).ready(function () {
             $("#telNum").val(data[0].Num);
             $("#dateN").val(data[0].DateBirth);
             //$("select").val(data[0].FirstnameD + " " + data[0].LastnameD);
-            $("#medecin").val(data[0].UsernameDr);
+            $("select").append('<option style="font-family:verdana; color:#af533f;">' + data[0].UsernameDr + '</option>');
+           
         }
     });
-
-
     $.ajax({
         type: "POST",
         url: "http://192.168.43.69:1880/affichedoctor",

@@ -11,8 +11,11 @@ $(document).ready(function () {
 			var datedebut=dated.substr(0,10);
 			var datef=data[1].DateMess;
 			var datefin=datef.substr(0,10);
-			console.log(datefin);
-			console.log(datedebut);
+
+			var DateFin = datef.substr(0, 16);
+
+			//console.log(datefin);
+			//console.log(datedebut);
 			for(let i=0; i<19; i++)
 			{
 				var aux= "";
@@ -20,12 +23,13 @@ $(document).ready(function () {
 				data[i].DateMess=aux.substring(11,16);
 			}
 			
-			if (data[0].Temp>30) {
+			/*if (data[0].Temp>30) {
 				navigator.vibrate(2000);
-			}
+			}*/
 
 			var temp = data[0].Temp + "°C";
 			$('.temp').html(temp);
+			console.log(temp);
 
 			var hum = data[0].Hum + "%";
 			$('.humidity').html(hum);
@@ -41,6 +45,34 @@ $(document).ready(function () {
 
 			var spo2 = data[0].spo2 + "%";
 			$('.spo2').html(spo2);
+
+			var nb = 0 ;
+			if (data[0].Temp >= 40) {
+				$("#img").append('<a href="#"><div class="media"><hr><div class="media-body"><p class="noti-details"><span class="noti-title" id="nomnot"><span class="avatar"><img src="img/user-07.png" class="img-fluid"></span><b> ' + data[0].Firstname + " " + data[0].Lastname + '</b></span> <span class="noti-title" id="not"><p style= "font-family:verdana; margin-left: 5px; color:#B50818;"><img src="img/xx.jpg" style= "margin-left: 40px; margin-right: 8px; width:20px ; height:20px ;"><b>Alerte: </b><span style="color:#0C0B0B"> La température ambiante a dépassé le seuil.</span><br><p class="text-muted"><span style="margin-left: 215px" class="text-secondary"><i class="fa fa-calendar"> </i>' +" "+ DateFin + '</span> </p></p><hr></span></p></div></div></a>');
+				nb++;
+			}
+			if (data[0].Hum >= 90) {
+				$("#img").append('<a href="#"><div class="media"><hr><div class="media-body"><p class="noti-details"><span class="noti-title" id="nomnot"><span class="avatar"><img src="img/user-07.png" class="img-fluid"></span><b> ' + data[0].Firstname + " " + data[0].Lastname + '</b></span> <span class="noti-title" id="not"><p style= "font-family:verdana; margin-left: 5px; color:#B50818;"><img src="img/xx.jpg" style= "margin-left: 40px; margin-right: 8px; width:20px ; height:20px ;"><b>Alerte: </b><span style="color:#0C0B0B"> L&lsquo;humidité ambiante a dépassé le seuil.</span><br><p class="text-muted"><span style="margin-left: 215px" class="text-secondary"><i class="fa fa-calendar"> </i>' +" "+ DateFin + '</span> </p></p><hr></span></p></div></div></a>');
+				nb++;
+			}
+			if (data[0].Press >= 50) {
+				$("#img").append('<a href="#"><div class="media"><hr><div class="media-body"><p class="noti-details"><span class="noti-title" id="nomnot"><span class="avatar"><img src="img/user-07.png" class="img-fluid"></span><b> ' + data[0].Firstname + " " + data[0].Lastname + '</b></span> <span class="noti-title" id="not"><p style= "font-family:verdana; margin-left: 5px; color:#B50818;"><img src="img/xx.jpg" style= "margin-left: 40px; margin-right: 8px; width:20px ; height:20px ;"><b>Alerte: </b><span style="color:#0C0B0B"> La pression ambiante a dépassé le seuil.</span><br><p class="text-muted"><span style="margin-left: 215px" class="text-secondary"><i class="fa fa-calendar"> </i>' +" "+ DateFin + '</span> </p></p><hr></span></p></div></div></a>');
+				nb++;
+			}
+			if (data[0].TempBody >= 30) {
+				$("#img").append('<a href="#"><div class="media"><hr><div class="media-body"><p class="noti-details"><span class="noti-title" id="nomnot"><span class="avatar"><img src="img/user-07.png" class="img-fluid"></span><b> ' + data[0].Firstname + " " + data[0].Lastname + '</b></span> <span class="noti-title" id="not"><p style= "font-family:verdana; margin-left: 5px; color:#B50818;"><img src="img/xx.jpg" style= "margin-left: 40px; margin-right: 8px; width:20px ; height:20px ;"><b>Alerte: </b><span style="color:#0C0B0B"> La température corporelle du patient ' + data[0].Firstname + " " + data[0].Lastname + ' a dépassé le seuil.</span><br><p class="text-muted"><span style="margin-left: 215px" class="text-secondary"><i class="fa fa-calendar"> </i>' +" "+ DateFin + '</span> </p></p><hr></span></p></div></div></a>');
+				nb++;
+			}
+			if (data[0].HeartRate >= 80) {
+				$("#img").append('<a href="#"><div class="media"><hr><div class="media-body"><p class="noti-details"><span class="noti-title" id="nomnot"><span class="avatar"><img src="img/user-07.png" class="img-fluid"></span><b> ' + data[0].Firstname + " " + data[0].Lastname + '</b></span> <span class="noti-title" id="not"><p style= "font-family:verdana; margin-left: 5px; color:#B50818;"><img src="img/xx.jpg" style= "margin-left: 40px; margin-right: 8px; width:20px ; height:20px ;"><b>Alerte: </b><span style="color:#0C0B0B"> La fréquence cardiaque du patient ' + data[0].Firstname + " " + data[0].Lastname + ' a dépassé le seuil.</span><br><p class="text-muted"><span style="margin-left: 215px" class="text-secondary"><i class="fa fa-calendar"> </i>' +" "+ DateFin + '</span> </p></p><hr></span></p></div></div></a>');
+				nb++;
+			}
+			if (data[0].spo2 >= 80) {
+				$("#img").append('<a href="#"><div class="media"><hr><div class="media-body"><p class="noti-details"><span class="noti-title" id="nomnot"><span class="avatar"><img src="img/user-07.png" class="img-fluid"></span><b> ' + data[0].Firstname + " " + data[0].Lastname + '</b></span> <span class="noti-title" id="not"><p style= "font-family:verdana; margin-left: 5px; color:#B50818;"><img src="img/xx.jpg" style= "margin-left: 40px; margin-right: 8px; width:20px ; height:20px ;"><b>Alerte: </b><span style="color:#0C0B0B"> La saturation d&lsquo;oxygène dans le sang (SPO2) du patient ' + data[0].Firstname + " " + data[0].Lastname + ' a dépassé le seuil.</span><br><p class="text-muted"><span style="margin-left: 215px" class="text-secondary"><i class="fa fa-calendar"> </i>' +" "+ DateFin + '</span> </p></p><hr></span></p></div></div></a>');
+				nb++;
+			}
+			$("#nb").text(nb);
+
 
 			//Date mesures
 			$(".datedebut").append(

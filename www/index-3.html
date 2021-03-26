@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <title>Membre de famille | Page d'acceuil</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
@@ -25,7 +25,11 @@
         }
 
         .humidity,
-        .temp, .pressure, .TempCorp, .HR, .spo2 {
+        .temp,
+        .pressure,
+        .TempCorp,
+        .HR,
+        .spo2 {
             font-size: 40px;
         }
 
@@ -79,8 +83,8 @@
     <div class="main-wrapper">
         <div class="header">
             <div class="header-left">
-                <a href="index-2.html" class="logo">
-                    <img src="img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
+                <a href="" class="logo">
+                    <img src="img/logo1.png" width="35" height="35" alt=""> <span>Box-Covid</span>
                 </a>
             </div>
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -88,90 +92,19 @@
             <ul class="nav user-menu float-right">
                 <li class="nav-item dropdown d-none d-sm-block">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i>
-                        <span class="badge badge-pill bg-danger float-right">3</span></a>
+                        <span class="badge badge-pill bg-danger float-right" id="nb"></span></a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
                             <span>Notifications</span>
                         </div>
                         <div class="drop-scroll">
                             <ul class="notification-list">
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">
-                                                <img alt="John Doe" src="img/user.jpg" class="img-fluid">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">John Doe</span> added
-                                                    new task <span class="noti-title">Patient appointment booking</span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span>
-                                                    changed the task name <span class="noti-title">Appointment booking
-                                                        with payment gateway</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">L</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Misty Tison</span>
-                                                    added <span class="noti-title">Domenic Houston</span> and <span
-                                                        class="noti-title">Claire Mapes</span> to project <span
-                                                        class="noti-title">Doctor available module</span></p>
-                                                <p class="noti-time"><span class="notification-time">8 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">G</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Rolland Webber</span>
-                                                    completed task <span class="noti-title">Patient and Doctor video
-                                                        conferencing</span></p>
-                                                <p class="noti-time"><span class="notification-time">12 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span>
-                                                    added new task <span class="noti-title">Private chat module</span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">2 days ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
+                                <li class="notification-message" id="img">
+
                                 </li>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="activities.html">View all Notifications</a>
                         </div>
                     </div>
                 </li>
@@ -237,7 +170,8 @@
                                             <div class="profile-info-left">
                                                 <h3 class="user-name m-t-0 mb-0" id="user-name"></h3>
                                                 <br>
-                                                <small class="text-muted h5" id="role"><img src="img/sample_family.png" width="30px"> Membre de famille</small>
+                                                <small class="text-muted h5" id="role"><img src="img/sample_family.png"
+                                                        width="30px"> Membre de famille</small>
                                                 <div class="staff-msg"><a href="edit-FamilyMember.html"
                                                         class="btn btn-outline-primary"><i class="fa fa-pencil"></i>
                                                         Modifier
@@ -251,7 +185,7 @@
                                                     <span class="text" id="tel"></span>
                                                 </li>
                                                 <li>
-                                                    <span class="title">Username:</span>
+                                                    <span class="title">Email:</span>
                                                     <span class="text" id="email"></span>
                                                 </li>
                                                 <br>
@@ -285,7 +219,8 @@
                                                 </span>
                                                 <div class="dash-widget-info text-right">
                                                     <h6 class="temp"></h6>
-                                                    <span class="widget-title1">Température<i class="fa fa-home"></i></span>
+                                                    <span class="widget-title1">Température<i
+                                                            class="fa fa-home"></i></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -294,7 +229,8 @@
                                                 <span class="dash-widget-bg2"><i class="fa fa-tint"></i></span>
                                                 <div class="dash-widget-info text-right">
                                                     <h6 class=" humidity"></h6>
-                                                    <span class="widget-title2">Humidité <i class="fa fa-home"></i></span>
+                                                    <span class="widget-title2">Humidité <i
+                                                            class="fa fa-home"></i></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -303,16 +239,19 @@
                                                 <span class="dash-widget-bg3"><i class="fa fa-cloud"></i></span>
                                                 <div class="dash-widget-info text-right">
                                                     <h6 class="pressure"></h6>
-                                                    <span class="widget-title3">Pression <i class="fa fa-home"></i></span>
+                                                    <span class="widget-title3">Pression <i
+                                                            class="fa fa-home"></i></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
                                             <div class="dash-widget">
-                                                <span class="dash-widget-bg4"><i class="fa fa-thermometer-half"></i></span>
+                                                <span class="dash-widget-bg4"><i
+                                                        class="fa fa-thermometer-half"></i></span>
                                                 <div class="dash-widget-info text-right">
                                                     <h6 class="TempCorp"></h6>
-                                                    <span class="widget-title4">Température corporelle <i class="fa fa-user"></i></span>
+                                                    <span class="widget-title4">Température corporelle <i
+                                                            class="fa fa-user"></i></span>
                                                 </div>
                                             </div>
                                         </div>

@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Tableau de bôrd patient</title>
+    <title>Docteur | Tableau de bôrd patient</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
@@ -31,8 +31,8 @@
     <div class="main-wrapper">
         <div class="header">
             <div class="header-left">
-                <a href="index-2.html" class="logo">
-                    <img src="img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
+                <a href="" class="logo">
+                    <img src="img/logo1.png" width="35" height="35" alt=""> <span>Box-Covid</span>
                 </a>
             </div>
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -40,103 +40,27 @@
             <ul class="nav user-menu float-right">
                 <li class="nav-item dropdown d-none d-sm-block">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i>
-                        <span class="badge badge-pill bg-danger float-right">3</span></a>
+                        <span class="badge badge-pill bg-danger float-right" id="nb"></span></a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
                             <span>Notifications</span>
                         </div>
                         <div class="drop-scroll">
                             <ul class="notification-list">
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">
-                                                <img alt="John Doe" src="img/user.jpg" class="img-fluid">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">John Doe</span> added
-                                                    new task <span class="noti-title">Patient appointment booking</span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span>
-                                                    changed the task name <span class="noti-title">Appointment booking
-                                                        with payment gateway</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">L</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Misty Tison</span>
-                                                    added <span class="noti-title">Domenic Houston</span> and <span
-                                                        class="noti-title">Claire Mapes</span> to project <span
-                                                        class="noti-title">Doctor available module</span></p>
-                                                <p class="noti-time"><span class="notification-time">8 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">G</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Rolland Webber</span>
-                                                    completed task <span class="noti-title">Patient and Doctor video
-                                                        conferencing</span></p>
-                                                <p class="noti-time"><span class="notification-time">12 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span>
-                                                    added new task <span class="noti-title">Private chat module</span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">2 days ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
+                                <li class="notification-message" id="img">
+
                                 </li>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="activities.html">View all Notifications</a>
                         </div>
                     </div>
-                </li>
-                <li class="nav-item dropdown d-none d-sm-block">
-                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i
-                            class="fa fa-comment-o"></i> <span
-                            class="badge badge-pill bg-danger float-right">8</span></a>
                 </li>
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img"><img class="rounded-circle" src="img/doctor.png" width="40" alt="Admin">
                             <span class="status online"></span></span>
-                        <span>Bienvenu Dr</span>
+                        <span id="bienvenu"></span>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="doctors.html"><i class="fa fa-user-o"> </i> Mon profil</a>
@@ -169,6 +93,10 @@
                         <li>
                             <a href="doctors.html"><i class="fa fa-user-md"></i> <span>Mon profil</span></a>
                         </li>
+                        <li>
+                            <a href="Archives.html"><i class="fa fa-archive"></i> <span>Archive</span><span
+                                    class="badge badge-pill bg-primary float-right" id="badge-Arch"></span></a>
+                        </li>
                         <li class="active">
                             <a href="profile.html"><i class="fa fa-wheelchair"></i> <span>Patient</span></a>
                         </li>
@@ -178,9 +106,6 @@
         </div>
         <div class="page-wrapper">
             <div class="content">
-                <a href="doctors.html"> <i class="fa fa-arrow-left" style="font-size: 25px;"></i></a>
-                <br>
-                <br>
                 <div class="card-box profile-header">
                     <div class="row">
                         <div class="col-md-12">
@@ -196,9 +121,10 @@
                                             <div class="profile-info-left">
                                                 <h3 class="user-name m-t-0 mb-0" id="nompatient"></h3>
                                                 <br>
-                                                <small class="text-muted h5" id="role"> 🧑 Patient </small>
-                                                <div class="staff-msg"><a href="edit medecin.html"
-                                                    class="btn btn-danger"><i class="fa fa-trash"></i> Supprimer </a></div>
+                                                <small class="text-muted h5" id="role"><img src="img/patIcone.jpg"
+                                                        width="25px"> Patient </small>
+                                                <div class="staff-msg"><button id="sss" class="btn btn-danger"><i
+                                                            class="fa fa-trash"></i> Supprimer </button></div>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
@@ -238,9 +164,9 @@
                         <li class="nav-item"><a class="nav-link" href="profile.html">A
                                 propos</a></li>
 
-                        <li class="nav-item"><a class="nav-link active" href="profil-Dashboard.html">Tableau de bôrd</a></li>
-                        <li class="nav-item"><a class="nav-link" href="profile-messages.html"
-                                >Messages</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="profil-Dashboard.html">Tableau de bôrd</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="profile-messages.html">Messages</a></li>
                     </ul>
                     <div class="tab-pane show active" id="bottom-tab2">
                         <br>
@@ -280,7 +206,8 @@
                                             <span class="dash-widget-bg4"><i class="fa fa-thermometer-half"></i></span>
                                             <div class="dash-widget-info text-right">
                                                 <h6 class="TempCorp"></h6>
-                                                <span class="widget-title4">Température corporelle <i class="fa fa-user"></i></span>
+                                                <span class="widget-title4">Température corporelle <i
+                                                        class="fa fa-user"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -836,8 +763,10 @@
     <script src="js/select2.min.js"></script>
     <script src="js/moment.min.js"></script>
     <script src="js/Chart.bundle.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/chartFamilyDr.js"></script>
     <script src="js/patient.js"></script>
+    <script src="js/fetchInfo.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/Desactivate.js"></script>
     <script src="js/sweetalert/jquery.sweet-alert.custom.js"></script>

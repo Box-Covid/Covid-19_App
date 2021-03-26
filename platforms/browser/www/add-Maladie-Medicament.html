@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <title>Docteur | Ajout Maladie&Medicament</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/select2.min.css">
@@ -26,8 +26,8 @@
     <div class="main-wrapper">
         <div class="header">
             <div class="header-left">
-                <a href="index-2.html" class="logo">
-                    <img src="img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
+                <a href="" class="logo">
+                    <img src="img/logo1.png" width="35" height="35" alt=""> <span>Box-Covid</span>
                 </a>
             </div>
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -42,96 +42,21 @@
                         </div>
                         <div class="drop-scroll">
                             <ul class="notification-list">
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">
-                                                <img alt="John Doe" src="img/user.jpg" class="img-fluid rounded-circle">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">John Doe</span> added
-                                                    new task <span class="noti-title">Patient appointment booking</span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span>
-                                                    changed the task name <span class="noti-title">Appointment booking
-                                                        with payment gateway</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">L</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Misty Tison</span>
-                                                    added <span class="noti-title">Domenic Houston</span> and <span
-                                                        class="noti-title">Claire Mapes</span> to project <span
-                                                        class="noti-title">Doctor available module</span></p>
-                                                <p class="noti-time"><span class="notification-time">8 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">G</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Rolland Webber</span>
-                                                    completed task <span class="noti-title">Patient and Doctor video
-                                                        conferencing</span></p>
-                                                <p class="noti-time"><span class="notification-time">12 mins ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span>
-                                                    added new task <span class="noti-title">Private chat module</span>
-                                                </p>
-                                                <p class="noti-time"><span class="notification-time">2 days ago</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
+                                <li class="notification-message" id="img">
+
                                 </li>
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="activities.html">View all Notifications</a>
+                            
                         </div>
                     </div>
-                </li>
-                <li class="nav-item dropdown d-none d-sm-block">
-                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i
-                            class="fa fa-comment-o"></i> <span
-                            class="badge badge-pill bg-danger float-right">8</span></a>
                 </li>
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img"><img class="rounded-circle" src="img/doctor.png" width="40" alt="Admin">
                             <span class="status online"></span></span>
-                        <span>Bienvenu Dr</span>
+                        <span id="bienvenu"></span>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="doctors.html"><i class="fa fa-user-o"> </i> Mon profil</a>
@@ -159,7 +84,14 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="menu-title">Menu</li>
-                       
+                        <li> 
+                            <a href="doctors.html"><i class="fa fa-user-md"></i> <span>Mon profil</span></a>
+                        </li>
+                        <li>
+                            <a href="Archives.html"><i class="fa fa-archive"></i> <span>Archive</span><span
+                                    class="badge badge-pill bg-primary float-right" id="badge-Arch"></span></a>
+                        </li>
+
                         <li class="active">
                             <a href="profile.html"><i class="fa fa-wheelchair"></i> <span>Patient</span></a>
                         </li>
@@ -178,35 +110,39 @@
                     </div>
                 </div>
                 <form>
-                    <div class="card-box" style="border: 2px solid rgb(226, 231, 231);" >
+                    <div class="card-box" style="border: 2px solid rgb(226, 231, 231);">
                         <h3 class="card-title" style="font-family:verdana;">Informations Maladie</h3>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Nom maladies</label>
-                                    <input type="text" class="form-control floating" id="nommaladie" required placeholder="Saisir le nom...">
+                                    <input type="text" class="form-control floating" id="nommaladie" required
+                                        placeholder="Saisir le nom...">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Degré maladie </label>
-                                    <input type="text" class="form-control floating" id="degremaladie" required placeholder="Saisir le degré de la maladie...">
+                                    <input type="text" class="form-control floating" id="degremaladie" required
+                                        placeholder="Saisir le degré de la maladie...">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Description maladie</label>
-                                    <input type="text" class="form-control floating" id="descriptionmaladie" required placeholder="Saisir desription de la maladie...">
+                                    <input type="text" class="form-control floating" id="descriptionmaladie" required
+                                        placeholder="Saisir desription de la maladie...">
                                 </div>
                             </div>
                         </div>
                         <div class="add-more" style="margin-left: 3px;">
-                            <a href="#" class="btn btn-primary" id="sub1"><i class="fa fa-plus" style="margin-right: 10px;"></i>Ajouter maladie</a>
+                            <a href="#" class="btn btn-primary" id="sub1"><i class="fa fa-plus"
+                                    style="margin-right: 10px;"></i>Ajouter maladie</a>
                         </div>
                     </div>
 
 
-                    <div class="card-box" style="border: 2px solid rgb(226, 231, 231);" >
+                    <div class="card-box" style="border: 2px solid rgb(226, 231, 231);">
                         <h3 class="card-title" style="font-family:verdana;">Informations Médicaments</h3>
                         <div class="row">
                             <div class="col-md-6">
@@ -241,7 +177,8 @@
                             </div>
                         </div>
                         <div class="add-more" style="margin-right: 20px;">
-                            <a href="#" class="btn btn-primary" id="sub2"><i class="fa fa-plus" style="margin-right: 10px;"></i>Ajouter médicament</a>
+                            <a href="#" class="btn btn-primary" id="sub2"><i class="fa fa-plus"
+                                    style="margin-right: 10px;"></i>Ajouter médicament</a>
                         </div>
                     </div>
                 </form>
@@ -482,6 +419,8 @@
     <script src="js/app.js"></script>
     <script src="js/editmaladie.js"></script>
     <script src="js/editmedicament.js"></script>
+    <script src="js/fetchInfo.js"></script>
+    <script src="js/chartFamilyDr.js"></script>
     <script src="js/sweetalert/jquery.sweet-alert.custom.js"></script>
     <script src="js/sweetalert/sweetalert.min.js"></script>
     <script src="js/logout.js"></script>
