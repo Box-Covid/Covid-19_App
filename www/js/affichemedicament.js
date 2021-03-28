@@ -9,7 +9,7 @@ $(document).ready(function () {
         url: "http://192.168.43.69:1880/affichemedicament",
         data: { idu: idu },
         error: function () {
-            swal("Check your connexion to internet!!", "Try again!", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
         },
         success: function (data) {
             if (data.length == 0) {
@@ -54,7 +54,7 @@ $(document).ready(function () {
                         error: function () {
                             swal(
                                 'Oops...',
-                                'Un problème est survenu!!',
+                                'Un problème est survenu ! ❌',
                                 'error'
                             )
                         }
@@ -96,10 +96,10 @@ $(document).ready(function () {
                 url: "http://192.168.43.69:1880/modmedicament",
                 data: { nom: nom, dose: dose, nbrprise: nbrprise, details: details, id: idModif },
                 error: function () {
-                    swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                    swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                 },
                 success: function () {
-                    swal("Modification a été effectué avec succès", "Bienvenu dans Box-Covid !", "success");
+                    swal("Modification a été effectué avec succès ! ✔", "Bienvenu dans Box-Covid ! 😁", "success");
                     setTimeout(() => {
                         window.location.replace("profile.html");
                     }, 2000);
@@ -108,7 +108,7 @@ $(document).ready(function () {
 
 
         } else {
-            swal("Erreur de saisie !", "Veuillez vérifier vos champs", "error");
+            swal("Erreur de saisie !", "Veuillez vérifier vos champs ❌", "error");
         }
 
     });

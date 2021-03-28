@@ -18,7 +18,7 @@ $(document).ready(function () {
         //timeout:1000,  
         data: { id: idDr },
         error: function () {
-            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
         },
         success: function (data) {
             $("#Arch").text(data[0].nbrArch);

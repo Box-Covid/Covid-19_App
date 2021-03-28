@@ -45,7 +45,7 @@ $(document).ready(function () {
                     success: function (data) {
                         if (data == "") {
 
-                            swal("Erreur Mot de passe de votre patient !", "Mot de passe n'existe pas", "error");
+                            swal("Erreur Mot de passe de votre patient !", "Mot de passe n'existe pas ❌", "error");
 
                         } else {
 
@@ -75,10 +75,10 @@ $(document).ready(function () {
 
 
             } else {
-                swal("Mot de passe est incorrect !", "Veuillez vérifier votre mot de passe 😕", "error");
+                swal("Mot de passe est incorrect !", "Veuillez vérifier votre mot de passe ❌", "error");
             }
         } else {
-            swal("Erreur de saisie !", "Veuillez vérifier vos champs 😕", "error");
+            swal("Erreur de saisie !", "Veuillez vérifier vos champs ❌", "error");
         }
 
     })

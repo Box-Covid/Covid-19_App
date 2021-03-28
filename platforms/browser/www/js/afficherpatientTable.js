@@ -9,7 +9,7 @@ $(document).ready(function () {
         //timeout:1000,  
         data: { id: idDr },
         error: function () {
-            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
         },
         success: function (data) {
             $("#badge-Arch").text(data[0].nbrArch);
@@ -22,7 +22,8 @@ $(document).ready(function () {
         //timeout:1000,  
         data: { id: idDr },
         error: function () {
-            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
+           
         },
         success: function (data) {
             $("#nbrPat").text(data[0].nbrPat);
@@ -34,7 +35,7 @@ $(document).ready(function () {
         url: "http://192.168.43.69:1880/affichepatients",
         data: { idDr: idDr },
         error: function () {
-            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
         },
         success: function (data) {
 
@@ -44,8 +45,7 @@ $(document).ready(function () {
                 for (var i = 0; i < data.length; i++) {
                     var dateN = data[i].DateBirth;
                     var ch = dateN.substr(0, 10);
-                    //     $("#TBDT").append('<tr> <td>'+data[i].Firstname+'</td><td>'+data[i].Lastname+'</td><td>'+ch+'</td><td>'+data[i].Sexe+'</td><td>'+data[i].Num+'</td></tr>');
-                    // }
+                   
                     t.row.add([
                         i,
                         data[i].Firstname,
@@ -126,7 +126,7 @@ $(document).ready(function () {
         //timeout:1000,  
         data: { id: idDr },
         error: function () {
-            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
         },
         success: function (data) {
             $("#nbrP").text(data[0].nbrPat);
@@ -149,7 +149,7 @@ $(document).ready(function () {
         //timeout:1000,  
         data: { id: idDr },
         error: function () {
-            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
         },
         success: function (data) {
             $("#Arch").text(data[0].nbrArch);

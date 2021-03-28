@@ -30,17 +30,17 @@ $(document).ready(function () {
                                         data: { username: username },
                                         success: function (data) {
                                             if (data == "") {
-                                                swal("Erreur Username !", "Username incorrect", "error");
+                                                swal("Erreur Email !", "Email incorrect", "error");
                                             } else {
                                                 $.ajax({
                                                     type: "POST",
                                                     url: "http://192.168.43.69:1880/userFamilyMember",
                                                     data: { username: username },
                                                     error: function () {
-                                                        swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                                                        swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                                                     }, success: function (data) {
                                                         if (data == "") {
-                                                            swal("Erreur de saisie !", "Username inscorrect !", "error");
+                                                            swal("Erreur de saisie !", "Email incorrect ! ❌", "error");
                                                         } else {
                                                             $.ajax({
                                                                 type: "POST",
@@ -48,7 +48,7 @@ $(document).ready(function () {
 
                                                                 data: { username: username },
                                                                 error: function () {
-                                                                    swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                                                                    swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                                                                 },
                                                                 success: function (data) {
                                                                     if (data[0].password == password) {
@@ -70,7 +70,7 @@ $(document).ready(function () {
                                                                             window.location.replace("index-3.html");
                                                                         });
                                                                     } else {
-                                                                        swal("Erreur de saisie !", "Mot de passe incorrect !", "error");
+                                                                        swal("Erreur de saisie !", "Mot de passe incorrect ! ❌", "error");
                                                                     }
                                                                 }
                                                             })
@@ -89,7 +89,7 @@ $(document).ready(function () {
 
                                         data: { username: username },
                                         error: function () {
-                                            swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                                            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                                         },
                                         success: function (data) {
                                             if (data[0].password == password) {
@@ -109,7 +109,7 @@ $(document).ready(function () {
                                                     window.location.replace("index-2.html");
                                                 });
                                             } else {
-                                                swal("Erreur de saisie !", "Mot de passe incorrect !", "error");
+                                                swal("Erreur de saisie !", "Mot de passe incorrect ! ❌", "error");
                                             }
                                         }
                                     })
@@ -122,7 +122,7 @@ $(document).ready(function () {
                             url: "http://192.168.43.69:1880/pwdDr",
                             data: { username: username },
                             error: function () {
-                                swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                                swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                             },
                             success: function (data) {
                                 if (data[0].password == password) {
@@ -142,17 +142,17 @@ $(document).ready(function () {
                                         window.location.replace("doctors.html");
                                     });
                                 } else {
-                                    swal("Erreur de saisie !", "Mot de passe incorrect !", "error");
+                                    swal("Erreur de saisie !", "Mot de passe incorrect ! ❌", "error");
                                 }
                             }
                         })
                     } else {
-                        swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                        swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                     }
 
                 },
                 error: function () {
-                    swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                    swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                 }
             })
         }

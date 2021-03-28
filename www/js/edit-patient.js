@@ -88,7 +88,7 @@ $(document).ready(function () {
                 swal("Mot de passe est incorrect !", "Veuillez vérifier votre mot de passe 😕", "error");
             }
         } else {
-            swal("Erreur de saisie !", "Veuillez vérifier vos champs 😕", "error");
+            swal("Erreur de saisie !", "Veuillez vérifier vos champs ❌", "error");
         }
 
     })

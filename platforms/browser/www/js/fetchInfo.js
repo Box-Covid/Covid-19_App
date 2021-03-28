@@ -8,7 +8,7 @@ $(document).ready(function () {
         data: { Id: Id },
         error: function () {
           //  $(".loader").fadeOut()
-            swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
         },
         success: function (data) {  
             //$(".loader").fadeOut()

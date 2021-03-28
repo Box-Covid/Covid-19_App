@@ -25,7 +25,7 @@ $(document).ready(function () {
                 data: { idP: id, idD: idD },
                 timeout: 2000,
                 error: function () {
-                    swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+                    swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                 },
                 success: function (data) {
                     if (data.length == 0) {
@@ -78,7 +78,7 @@ $(document).ready(function () {
                     //timeout:1000,  
                     data: { msg: msg, idP: id, idD: idD },
                     error: function () {
-                        swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+                        swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                     },
                     success: function () {
                         window.location.replace("message.html");
@@ -93,7 +93,7 @@ $(document).ready(function () {
                     //timeout:1000,  
                     data: { idP: id, idD: idD },
                     error: function () {
-                        swal("Erreur de connexion !", "Vérifier votre connexion Internet", "error");
+                        swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                     },
                     success: function (data) {
                         window.location.replace("message.html");

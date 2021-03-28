@@ -14,7 +14,7 @@ $(document).ready(function () {
       test = false;
       swal(
         'Oops...',
-        'Un problème est survenu!!',
+        'Un problème est survenu ! ❌',
         'error'
       )
     }
@@ -26,10 +26,10 @@ $(document).ready(function () {
           url: "http://192.168.43.69:1880/editmaladie",
           data: { nommaladie: nom, degremaladie: degre, descriptionmaladie: description, idu: idu },
           error: function () {
-            swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+            swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
           },
           success: function () {
-            swal("Maladie a été ajouté avec succès", "Bienvenu dans Box-Covid !", "success");
+            swal("Maladie a été ajouté avec succès ✔", "Bienvenu dans Box-Covid ! 😁", "success");
             setTimeout(() => {
               window.location.replace("profile.html");
             }, 2000);

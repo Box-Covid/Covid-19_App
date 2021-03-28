@@ -79,7 +79,7 @@ $(document).ready(function () {
                     swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                   },
                   success: function () {
-                    swal("Inscription a été effectué avec succès", "Bienvenu dans Box-Covid !", "success");
+                    swal("Inscription a été effectué avec succès ✔", "Bienvenu dans Box-Covid ! 😁", "success");
                     setTimeout(() => {
                       window.location.replace("index.html");
                     }, 2500);
@@ -89,7 +89,7 @@ $(document).ready(function () {
               }
             })
           } else {
-            swal("Erreur Username !", "Username existe déjà", "error");
+            swal("Erreur Email !", "Email existe déjà ❌", "error");
           }
         }
       });
