@@ -12,10 +12,11 @@ $(document).ready(function () {
     var tel = $("#tel").val();
     var pwd = $("#pwd").val();
     var idP = $("#pwdpatient").val();
+    var emailidP = $("#emailpatient").val();
 
     var test = true;
 
-    if (($.trim(prenom).length == 0) || ($.trim(nom).length == 0) || ($.trim(username).length == 0) || ($.trim(tel).length == 0) || ($.trim(pwd).length < 8) || ($.trim(idP).length < 8)) {
+    if (($.trim(prenom).length == 0) || ($.trim(nom).length == 0) || ($.trim(username).length == 0) || ($.trim(tel).length == 0) || ($.trim(emailidP).length == 0) || ($.trim(pwd).length < 8) || ($.trim(idP).length < 8)) {
       test = false;
     } else if (!emailIsValid(username)) {
       swal("Erreur de saisie!", "Veuillez saisir un email valide 📧", "error");
@@ -33,7 +34,7 @@ $(document).ready(function () {
         //timeout: 400,
         data: { username: username },
         error: function () {
-          swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+          swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
         },
         success: function (data) {
 
@@ -43,15 +44,15 @@ $(document).ready(function () {
               type: "POST",
               url: "http://192.168.43.69:1880/idP",
               //timeout: 400,
-              data: { idP: idP },
+              data: { idP: idP, emailP: emailidP },
               error: function () {
-                swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                swal("Erreur de connexion !", "Vérifier votre connexion internet😕", "error");
               },
               success: function (data) {
 
                 if (data == "") {
 
-                  swal("Erreur Mot de passe de votre patient !", "Mot de passe n'existe pas", "error");
+                  swal("Mot de passe ou email n'existe pas !","Veuillez vérifier le mot de passe ou l'email de votre patient ! ❌", "error");
 
                 } else {
 
@@ -61,12 +62,12 @@ $(document).ready(function () {
                     type: "POST",
                     url: "http://192.168.43.69:1880/boxfamily",
                     //timeout: 1000,
-                    data: { prenom: prenom, nom: nom, username: username, tel: tel, pwd: pwd, idP: idy },
+                    data: { prenom: prenom, nom: nom, username: username, tel: tel, pwd: pwd, emailidP: idy, idP: idy },
                     error: function () {
-                      swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                      swal("Erreur de connexion !", "Vérifier votre connexion internet😕", "error");
                     },
                     success: function () {
-                      swal("Inscription a été effectué avec succès", "Bienvenu dans Box-Covid !", "success");
+                      swal("Inscription a été effectué avec succès ✔", "Bienvenu dans Box-Covid ! 😁", "success");
                       setTimeout(() => {
                         window.location.replace("index.html");
                       }, 2500);
@@ -74,9 +75,9 @@ $(document).ready(function () {
                   })
                 }
               }
-            })
+            });
           } else {
-            swal("Erreur Username !", "Username existe déjà", "error");
+            swal("Erreur Email !", "Email existe déjà ❌", "error");
           }
         }
       });

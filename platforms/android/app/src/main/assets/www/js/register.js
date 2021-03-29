@@ -42,7 +42,7 @@ $(document).ready(function () {
         //data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, pwd, pwd },
         data: { username: username },
         error: function () {
-          swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+          swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
         },
         success: function (data) {
           if (data == "") {
@@ -52,17 +52,17 @@ $(document).ready(function () {
               timeout: 1000,
               data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, pwd: pwd },
               error: function () {
-                swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");
+                swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
               },
               success: function () {
-                swal("Inscription a été effectué avec succès", "Bienvenu dans Box-Covid !", "success");
+                swal("Inscription a été effectué avec succès ✔", "Bienvenu dans Box-Covid ! 😁", "success");
                 setTimeout(() => {
                   window.location.replace("index.html");
                 }, 2500);
               }
             })
           } else {
-            swal("Erreur Username !", "Username existe déjà", "error");
+            swal("Erreur Email !", "Email existe déjà ❌", "error");
           }
         }
 

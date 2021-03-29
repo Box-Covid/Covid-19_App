@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <title>Docteur | Page d'acceuil</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/select2.min.css">
@@ -24,7 +24,7 @@
     <div class="main-wrapper">
         <div class="header">
             <div class="header-left">
-                <a href="" class="logo">
+                <a class="logo">
                     <img src="img/logo1.png" width="35" height="35" alt=""> <span>Box-Covid</span>
                 </a>
             </div>
@@ -36,7 +36,7 @@
                         <span class="badge badge-pill bg-danger float-right" id="nbrP"></span></a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
-                            <span>Notifications</span>
+                            <span>Patients</span>
                         </div>
                         <div class="drop-scroll">
                             <ul class="notification-list">
@@ -123,6 +123,7 @@
                                         </div>
                                         <div class="col-md-7">
                                             <ul class="personal-info">
+                                                <br>
                                                 <li>
                                                     <span class="title">Tel:</span>
                                                     <span class="text" id="tel"></span>
@@ -135,7 +136,6 @@
                                                     <span class="title">Date de naissance:</span>
                                                     <span class="text" id="dateNaiss"></span>
                                                 </li>
-                                                <br>
                                                 <li>
                                                     <span class="title">Sexe:</span>
                                                     <span class="text" id="sexe"></span>
@@ -149,10 +149,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-sm-12">
                         <p class="page-title" style="margin-top: 20px;"><b> <span class="badge badge-pill bg-primary"
                                     style="color: whitesmoke;" id="nbrPat">
-                                </span> <u> Patient(s)</u></b></p>
+                                </span> <u> Patient(s)</u><a class="pull-right" href="doctorsTable.html"><i class="fa fa-table"></i></a></b></p>
                     </div>
                 </div>
                 <div class="row doctor-grid" id="patient" style="margin-top: 30px;">

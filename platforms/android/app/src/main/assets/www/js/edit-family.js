@@ -14,6 +14,7 @@ $(document).ready(function () {
             $("#nom").val(data[0].Lastname);
             $("#usern").val(data[0].Username);
             $("#telNum").val(data[0].Num);
+            $("#emailpatient").val(data[0].UsernameP);
             //$("#mdp").val(data[0].password);
             //$("#cMdp").val(data[0].password);
             //$("#Mdpatient").val(data[0].passwordP);
@@ -28,24 +29,25 @@ $(document).ready(function () {
         var Cmdp = $("#cMdp").val();
         var tel = $("#telNum").val();
         var idP = $("#Mdpatient").val();
+        var emailP = $("#emailpatient").val();
 
         event.preventDefault();
 
-        if (($.trim(prenom).length != 0) && ($.trim(nom).length != 0) && ($.trim(username).length != 0) && ($.trim(tel).length != 0) && ($.trim(idP).length != 0)) {
+        if (($.trim(prenom).length != 0) && ($.trim(nom).length != 0) && ($.trim(username).length != 0) && ($.trim(tel).length != 0) && ($.trim(emailP).length != 0) && ($.trim(idP).length != 0)) {
             if (mdp == Cmdp && ($.trim(mdp).length >= 8)) {
 
                 $.ajax({
                     type: "POST",
                     url: "http://192.168.43.69:1880/idP",
                     //timeout: 400,
-                    data: { idP: idP },
+                    data: { idP: idP, emailP: emailP },
                     error: function () {
                         swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                     },
                     success: function (data) {
                         if (data == "") {
 
-                            swal("Erreur Mot de passe de votre patient !", "Mot de passe n'existe pas", "error");
+                            swal("Veuillez vérifier le mot de passe ou l'email de votre patient !", "Mot de passe ou email n'existe pas ! ❌", "error");
 
                         } else {
 
@@ -57,7 +59,7 @@ $(document).ready(function () {
                                 type: "POST",
                                 url: "http://192.168.43.69:1880/editFamily",
                                 timeout: 1000,
-                                data: { prenom: prenom, nom: nom, username: username, tel: tel, pwd: mdp, Id: Id, idP: idy },
+                                data: { prenom: prenom, nom: nom, username: username, tel: tel, pwd: mdp, Id: Id, emailP: idy, idP: idy },
                                 error: function () {
                                     swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                                 },
@@ -78,7 +80,7 @@ $(document).ready(function () {
                 swal("Mot de passe est incorrect !", "Veuillez vérifier votre mot de passe 😕", "error");
             }
         } else {
-            swal("Erreur de saisie !", "Veuillez vérifier vos champs 😕", "error");
+            swal("Erreur de saisie !", "Veuillez vérifier vos champs ! ❌", "error");
         }
 
     })

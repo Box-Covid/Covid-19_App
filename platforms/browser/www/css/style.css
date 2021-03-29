@@ -1041,6 +1041,16 @@ textarea.form-control {
 	width: 20px;
 	transition: all 0.2s ease-in-out 0s;
 }
+
+.sidebar-menu ul li a i {
+	align-items: center;
+	display: inline-flex;
+	font-size: 18px;
+	min-height: 24px;
+	line-height: 18px;
+	width: 20px;
+	transition: all 0.2s ease-in-out 0s;
+}
 .sidebar-menu ul li.menu-title a i {
 	font-size: 16px;
 	margin-right: 0;

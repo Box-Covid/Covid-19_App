@@ -4,6 +4,22 @@ $(document).ready(function () {
             return /\S+@\S+\.\S+/.test(username);
         }
 
+        const showLoading = function () {
+            swal({
+                title: 'Envoi du mot de passe en cours ⏳',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                timer: 5000,
+                onOpen: () => {
+                    swal.showLoading();
+                }
+            }).then(
+            )
+            setTimeout(() => {
+                window.location.replace("index.html");
+            }, 6000);
+        };
+
         var emailPWD = $("#userPWDFM").val();
         event.preventDefault();
         if (emailIsValid(emailPWD)) {
@@ -35,14 +51,10 @@ $(document).ready(function () {
                                 swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
                             },
                             success: function (data) {
-                                Toast.fire({
-                                    type: 'success',
-                                    title: 'Votre mot de passe été envoyé avec succès ✔'
-                                }).then(() => {
-                                    window.location.replace("index.html");
-                                });
                             }
                         });
+                        showLoading();
+                      
                     }
                 }
             });
