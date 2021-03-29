@@ -17,7 +17,7 @@ $(document).ready(function () {
                     event.preventDefault();
                     $.ajax({
                         type: "POST",  //Request type
-                        url: "http://192.168.43.69:1880/desac",
+                        url: "http://192.168.1.13:1880/desac",
                         data: { id: id },
                         error: function () {
                             swal("Erreur de connexion !", "Vérifier votre connexion internet", "error");

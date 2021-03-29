@@ -3,7 +3,7 @@ $(document).ready(function () {
     var Id = localStorage.getItem("id");
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/idFamily",
+        url: "http://192.168.1.13:1880/idFamily",
         data: { Id: Id },
         error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
@@ -38,7 +38,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "POST",
-                    url: "http://192.168.43.69:1880/idP",
+                    url: "http://192.168.1.13:1880/idP",
                     //timeout: 400,
                     data: { idP: idP, emailP: emailP },
                     error: function () {
@@ -57,7 +57,7 @@ $(document).ready(function () {
 
                             $.ajax({
                                 type: "POST",
-                                url: "http://192.168.43.69:1880/editFamily",
+                                url: "http://192.168.1.13:1880/editFamily",
                                 timeout: 1000,
                                 data: { prenom: prenom, nom: nom, username: username, tel: tel, pwd: mdp, Id: Id, emailP: idy, idP: idy },
                                 error: function () {

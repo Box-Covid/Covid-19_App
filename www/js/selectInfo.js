@@ -2,7 +2,7 @@ $(document).ready(function () {
     var id = localStorage.getItem("id");
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/idpatientConn",
+        url: "http://192.168.1.13:1880/idpatientConn",
         //timeout:1000,  
         data: { id: id },
         error: function () {

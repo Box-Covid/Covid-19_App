@@ -5,7 +5,7 @@ $(document).ready(function () {
     var id = localStorage.getItem("id");
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/nbrArch",
+        url: "http://192.168.1.13:1880/nbrArch",
         //timeout:1000,  
         data: { id: id },
         error: function () {
@@ -17,7 +17,7 @@ $(document).ready(function () {
     });
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/selectArch",
+        url: "http://192.168.1.13:1880/selectArch",
         //timeout:1000,  
         data: { Id: id },
         error: function () {
@@ -61,7 +61,7 @@ $(document).ready(function () {
                                         $.ajax
                                             ({
                                                 type: "POST",  //Request type                                         
-                                                url: "http://192.168.43.69:1880/supppatientArchv",
+                                                url: "http://192.168.1.13:1880/supppatientArchv",
                                                 data: { id: idSupp },
                                             });
                                         window.location.href = "Archives.html";
@@ -101,7 +101,7 @@ $(document).ready(function () {
                                         $.ajax
                                             ({
                                                 type: "POST",  //Request type                                         
-                                                url: "http://192.168.43.69:1880/BackpatientArchv",
+                                                url: "http://192.168.1.13:1880/BackpatientArchv",
                                                 data: { id: idBack },
                                             });
                                         window.location.href = "Archives.html";

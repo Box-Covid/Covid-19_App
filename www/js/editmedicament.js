@@ -1,6 +1,21 @@
 // get username and password from the inputs and send them to the node-red:
-
 $(document).ready(function () {
+  const showLoading = function () {
+    swal({
+      title: 'Envoi d&rsquo;ordonnance en cours... ⏳',
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      timer: 5000,
+      onOpen: () => {
+        swal.showLoading();
+      }
+    }).then(
+    )
+
+    setTimeout(() => {
+      window.location.replace("profile.html");
+    }, 6000);
+  };
   var idu = localStorage.getItem("idEdit");
   $("#sub2").click(function () {
     var nom = $("#nom").val();
@@ -24,7 +39,7 @@ $(document).ready(function () {
       $.ajax
         ({
           type: "POST",  //Request type
-          url: "http://192.168.43.69:1880/editmedicament",
+          url: "http://192.168.1.13:1880/editmedicament",
           data: { nom: nom, dose: dose, nbrprise: nbrprise, details: details, idu: idu },
           error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
@@ -36,22 +51,15 @@ $(document).ready(function () {
             $.ajax
               ({
                 type: "POST",  //Request type
-                url: "http://192.168.43.69:1880/emailMedic",
+                url: "http://192.168.1.13:1880/emailMedic",
                 data: { idu: idu },
                 error: function () {
                   swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                 },
                 success: function () {
-                  swal("Medicament a été ajouté avec succès ✔", "Bienvenu dans Box-Covid ! 😁", "success");
-                  setTimeout(() => {
-                    window.location.replace("profile.html");
-                  }, 2000);
-
+                  showLoading();
                 }
               });
-
-            //fin sending mail
-
           }
         });
     }

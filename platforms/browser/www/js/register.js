@@ -37,7 +37,7 @@ $(document).ready(function () {
       event.preventDefault();
       $.ajax({
         type: "POST",  //Request type
-        url: "http://192.168.43.69:1880/userDoctor",
+        url: "http://192.168.1.13:1880/userDoctor",
         timeout: 400,
         //data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, pwd, pwd },
         data: { username: username },
@@ -48,7 +48,7 @@ $(document).ready(function () {
           if (data == "") {
             $.ajax({
               type: "POST",
-              url: "http://192.168.43.69:1880/box",
+              url: "http://192.168.1.13:1880/box",
               timeout: 1000,
               data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, pwd: pwd },
               error: function () {

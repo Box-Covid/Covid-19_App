@@ -26,7 +26,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: "http://192.168.43.69:1880/searchEmailDr",
+                url: "http://192.168.1.13:1880/searchEmailDr",
                 //timeout:1000,  
                 data: { emailpwd: emailPWD },
                 error: function () {
@@ -44,7 +44,7 @@ $(document).ready(function () {
                         var pwdDoctor = data[0].password;
                         $.ajax({
                             type: "POST",
-                            url: "http://192.168.43.69:1880/sendMail",
+                            url: "http://192.168.1.13:1880/sendMail",
                             //timeout:1000,  
                             data: { email: emailPWD, prenomDr: prenomDr, nomDr: nomDr, pwdDoctor: pwdDoctor },
                             error: function () {

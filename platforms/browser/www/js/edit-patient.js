@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/idPat",
+        url: "http://192.168.1.13:1880/idPat",
         data: { Id: Id },
         error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
@@ -25,7 +25,7 @@ $(document).ready(function () {
     });
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/affichedoctor",
+        url: "http://192.168.1.13:1880/affichedoctor",
         error: function () {
         },
         success: function (data) {
@@ -55,7 +55,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "POST",
-                    url: "http://192.168.43.69:1880/idDocteur",
+                    url: "http://192.168.1.13:1880/idDocteur",
                     //timeout: 400,
                     data: { idD: idD },
                     error: function () {
@@ -67,7 +67,7 @@ $(document).ready(function () {
 
                         $.ajax({
                             type: "POST",
-                            url: "http://192.168.43.69:1880/editPat",
+                            url: "http://192.168.1.13:1880/editPat",
                             timeout: 1000,
                             data: { prenom: prenom, nom: nom, dateN: dateN, username: username, tel: tel, pwd: mdp, Id: Id, idD: idx },
                             error: function () {

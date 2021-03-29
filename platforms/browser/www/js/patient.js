@@ -2,7 +2,7 @@ $(document).ready(function () {
     var id = localStorage.getItem("idEdit");
     $.ajax({
         type: "POST",
-        url: "http://192.168.43.69:1880/idpatient",
+        url: "http://192.168.1.13:1880/idpatient",
         //timeout:1000,  
         data: { id: id },
         error: function () {
@@ -41,7 +41,7 @@ $(document).ready(function () {
                                         $.ajax
                                             ({
                                                 type: "POST",  //Request type                                         
-                                                url: "http://192.168.43.69:1880/supppatient",
+                                                url: "http://192.168.1.13:1880/supppatient",
                                                 data: { id: id },
                                             });
                                         window.location.href = "doctors.html";
