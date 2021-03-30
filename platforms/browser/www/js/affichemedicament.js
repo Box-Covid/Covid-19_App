@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/affichemedicament",
+        url: "http://192.168.43.69:1880/affichemedicament",
         data: { idu: idu },
         error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
@@ -40,7 +40,7 @@ $(document).ready(function () {
                                     $.ajax
                                         ({
                                             type: "POST",  //Request type                                         
-                                            url: "http://192.168.1.13:1880/suppmedicament",
+                                            url: "http://192.168.43.69:1880/suppmedicament",
                                             data: { id: idSupp },
                                         });
 
@@ -69,7 +69,7 @@ $(document).ready(function () {
     const idModif = localStorage.getItem('idE');
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/idd",
+        url: "http://192.168.43.69:1880/idd",
         data: { id: idModif },
 
         error: function () {
@@ -93,7 +93,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: "http://192.168.1.13:1880/modmedicament",
+                url: "http://192.168.43.69:1880/modmedicament",
                 data: { nom: nom, dose: dose, nbrprise: nbrprise, details: details, id: idModif },
                 error: function () {
                     swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");

@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 	$.ajax({
 		type: "POST",
-		url: "http://192.168.1.13:1880/notMedicament",
+		url: "http://192.168.43.69:1880/notMedicament",
 		data: { id: idpatient },
 		success: function (data) {
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 	$.ajax({
 		type: "POST",
-		url: "http://192.168.1.13:1880/nbrMedicament",
+		url: "http://192.168.43.69:1880/nbrMedicament",
 		//timeout:1000,  
 		data: { idu: idpatient },
 		error: function () {

@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/affichemaladies",
+        url: "http://192.168.43.69:1880/affichemaladies",
         data: {idu: idu},
         error: function () {
 
@@ -43,7 +43,7 @@ $(document).ready(function () {
                                     $.ajax
                                         ({
                                             type: "POST",  //Request type                                         
-                                            url: "http://192.168.1.13:1880/suppmaladie",
+                                            url: "http://192.168.43.69:1880/suppmaladie",
                                             data: { id: idSupp },
                                         });
 
@@ -73,7 +73,7 @@ $(document).ready(function () {
     //console.log(idModif);
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/idM",
+        url: "http://192.168.43.69:1880/idM",
         data: { id: idModif },
 
         error: function () {
@@ -95,7 +95,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "POST",
-                    url: "http://192.168.1.13:1880/modmaladie",
+                    url: "http://192.168.43.69:1880/modmaladie",
                     data: { nommaladie: nom, degremaladie: degre, descriptionmaladie: description, id: idModif},
                     error: function () {
                         swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");

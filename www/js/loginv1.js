@@ -11,21 +11,21 @@ $(document).ready(function () {
             event.preventDefault();
             $.ajax({
                 type: "POST",
-                url: "http://192.168.1.13:1880/userDoctor",
+                url: "http://192.168.43.69:1880/userDoctor",
 
                 data: { username: username },
                 success: function (data) {
                     if (data == "") {
                         $.ajax({
                             type: "POST",
-                            url: "http://192.168.1.13:1880/userPatient",
+                            url: "http://192.168.43.69:1880/userPatient",
 
                             data: { username: username },
                             success: function (data) {
                                 if (data == "") {
                                     $.ajax({
                                         type: "POST",
-                                        url: "http://192.168.1.13:1880/userFamilyMember",
+                                        url: "http://192.168.43.69:1880/userFamilyMember",
 
                                         data: { username: username },
                                         success: function (data) {
@@ -34,7 +34,7 @@ $(document).ready(function () {
                                             } else {
                                                 $.ajax({
                                                     type: "POST",
-                                                    url: "http://192.168.1.13:1880/userFamilyMember",
+                                                    url: "http://192.168.43.69:1880/userFamilyMember",
                                                     data: { username: username },
                                                     error: function () {
                                                         swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
@@ -44,7 +44,7 @@ $(document).ready(function () {
                                                         } else {
                                                             $.ajax({
                                                                 type: "POST",
-                                                                url: "http://192.168.1.13:1880/pwdFamily",
+                                                                url: "http://192.168.43.69:1880/pwdFamily",
 
                                                                 data: { username: username },
                                                                 error: function () {
@@ -85,7 +85,7 @@ $(document).ready(function () {
                                 } else {
                                     $.ajax({
                                         type: "POST",
-                                        url: "http://192.168.1.13:1880/pwdPatient",
+                                        url: "http://192.168.43.69:1880/pwdPatient",
 
                                         data: { username: username },
                                         error: function () {
@@ -119,7 +119,7 @@ $(document).ready(function () {
                     } else if (data != "") {
                         $.ajax({
                             type: "POST",
-                            url: "http://192.168.1.13:1880/pwdDr",
+                            url: "http://192.168.43.69:1880/pwdDr",
                             data: { username: username },
                             error: function () {
                                 swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");

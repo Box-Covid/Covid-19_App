@@ -17,6 +17,8 @@ $(document).ready(function () {
     }, 6000);
   };
   var idu = localStorage.getItem("idEdit");
+ 
+
   $("#sub2").click(function () {
     var nom = $("#nom").val();
     var dose = $("#dose").val();
@@ -39,7 +41,7 @@ $(document).ready(function () {
       $.ajax
         ({
           type: "POST",  //Request type
-          url: "http://192.168.1.13:1880/editmedicament",
+          url: "http://192.168.43.69:1880/editmedicament",
           data: { nom: nom, dose: dose, nbrprise: nbrprise, details: details, idu: idu },
           error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
@@ -48,18 +50,35 @@ $(document).ready(function () {
 
             //Sending mail
 
-            $.ajax
+            /*$.ajax
               ({
                 type: "POST",  //Request type
-                url: "http://192.168.1.13:1880/emailMedic",
+                url: "http://192.168.43.69:1880/emailMedic",
                 data: { idu: idu },
                 error: function () {
                   swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
                 },
+                success: function () {*/
+            showLoading();
+            //}
+            //});
+            
+            event.preventDefault();
+            var demandeMed = "med";
+
+            $.ajax
+              ({
+                type: "POST",  //Request type
+                url: "http://192.168.43.69:1880/medic",
+                data: { id: demandeMed },
+                error: function () {
+                  swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");
+                },
                 success: function () {
-                  showLoading();
+
                 }
               });
+
           }
         });
     }

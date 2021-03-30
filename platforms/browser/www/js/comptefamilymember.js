@@ -30,7 +30,7 @@ $(document).ready(function () {
       event.preventDefault();
       $.ajax({
         type: "POST",  //Request type
-        url: "http://192.168.1.13:1880/userFamilyMember",
+        url: "http://192.168.43.69:1880/userFamilyMember",
         //timeout: 400,
         data: { username: username },
         error: function () {
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
             $.ajax({
               type: "POST",
-              url: "http://192.168.1.13:1880/idP",
+              url: "http://192.168.43.69:1880/idP",
               //timeout: 400,
               data: { idP: idP, emailP: emailidP },
               error: function () {
@@ -60,7 +60,7 @@ $(document).ready(function () {
 
                   $.ajax({
                     type: "POST",
-                    url: "http://192.168.1.13:1880/boxfamily",
+                    url: "http://192.168.43.69:1880/boxfamily",
                     //timeout: 1000,
                     data: { prenom: prenom, nom: nom, username: username, tel: tel, pwd: pwd, emailidP: idy, idP: idy },
                     error: function () {

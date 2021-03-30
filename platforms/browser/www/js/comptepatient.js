@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "http://192.168.1.13:1880/affichedoctor",
+      url: "http://192.168.43.69:1880/affichedoctor",
       error: function () {
       },
       success: function (data) {
@@ -48,7 +48,7 @@ $(document).ready(function () {
       event.preventDefault();
       $.ajax({
         type: "POST",  //Request type
-        url: "http://192.168.1.13:1880/userPatient",
+        url: "http://192.168.43.69:1880/userPatient",
         //timeout: 400,
         data: { username: username },
         error: function () {
@@ -60,7 +60,7 @@ $(document).ready(function () {
 
             $.ajax({
               type: "POST",
-              url: "http://192.168.1.13:1880/idDocteur",
+              url: "http://192.168.43.69:1880/idDocteur",
               //timeout: 400,
               data: { idD: idD },
               error: function () {
@@ -72,7 +72,7 @@ $(document).ready(function () {
 
                 $.ajax({
                   type: "POST",
-                  url: "http://192.168.1.13:1880/boxpatient",
+                  url: "http://192.168.43.69:1880/boxpatient",
                   //timeout: 1000,
                   data: { prenom: prenom, nom: nom, dateN: dateN, sexe: sexe, username: username, tel: tel, pwd: pwd, idD: idx },
                   error: function () {

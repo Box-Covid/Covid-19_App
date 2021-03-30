@@ -23,7 +23,7 @@ $(document).ready(function () {
       $.ajax
         ({
           type: "POST",  //Request type
-          url: "http://192.168.1.13:1880/editmaladie",
+          url: "http://192.168.43.69:1880/editmaladie",
           data: { nommaladie: nom, degremaladie: degre, descriptionmaladie: description, idu: idu },
           error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion internet 😕", "error");

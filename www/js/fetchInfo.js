@@ -3,7 +3,7 @@ $(document).ready(function () {
     
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/idDr",
+        url: "http://192.168.43.69:1880/idDr",
         //timeout:1000,  
         data: { Id: Id },
         error: function () {
@@ -27,7 +27,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/nbrArch",
+        url: "http://192.168.43.69:1880/nbrArch",
         //timeout:1000,  
         data: { id: Id },
         error: function () {

@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/doctorID",
+        url: "http://192.168.43.69:1880/doctorID",
         data: { id: id },
         //timeout: 400,
         error: function () {
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: "http://192.168.1.13:1880/fetchcmntrD",
+                url: "http://192.168.43.69:1880/fetchcmntrD",
                 //timeout:1000,  
                 data: { idP: id, idD: idD },
                 timeout: 2000,
@@ -74,7 +74,7 @@ $(document).ready(function () {
                 var msg = $("#cmntr").val();
                 $.ajax({
                     type: "POST",
-                    url: "http://192.168.1.13:1880/addcmntrP",
+                    url: "http://192.168.43.69:1880/addcmntrP",
                     //timeout:1000,  
                     data: { msg: msg, idP: id, idD: idD },
                     error: function () {
@@ -89,7 +89,7 @@ $(document).ready(function () {
             $("#refresh").click(function () {
                 $.ajax({
                     type: "POST",
-                    url: "http://192.168.1.13:1880/fetchcmntrD",
+                    url: "http://192.168.43.69:1880/fetchcmntrD",
                     //timeout:1000,  
                     data: { idP: id, idD: idD },
                     error: function () {

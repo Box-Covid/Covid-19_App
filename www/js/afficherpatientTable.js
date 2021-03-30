@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/nbrArch",
+        url: "http://192.168.43.69:1880/nbrArch",
         //timeout:1000,  
         data: { id: idDr },
         error: function () {
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/nbrPatActif",
+        url: "http://192.168.43.69:1880/nbrPatActif",
         //timeout:1000,  
         data: { id: idDr },
         error: function () {
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/affichepatients",
+        url: "http://192.168.43.69:1880/affichepatients",
         data: { idDr: idDr },
         error: function () {
             swal("Erreur de connexion !", "Vérifier votre connexion Internet 😕", "error");
@@ -78,7 +78,7 @@ $(document).ready(function () {
                                             $.ajax
                                                 ({
                                                     type: "POST",  //Request type                                         
-                                                    url: "http://192.168.1.13:1880/supppatient",
+                                                    url: "http://192.168.43.69:1880/supppatient",
                                                     data: { id: idSupp },
                                                 });
                                             window.location.href = "doctorsTable.html";
@@ -112,7 +112,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/FLpatient",
+        url: "http://192.168.43.69:1880/FLpatient",
         data: { id: idDr },
         success: function (data) {
             for (var i = data.length - 1; i >= 0; i--) {
@@ -122,7 +122,7 @@ $(document).ready(function () {
     });
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/nbrPatActif",
+        url: "http://192.168.43.69:1880/nbrPatActif",
         //timeout:1000,  
         data: { id: idDr },
         error: function () {
@@ -135,7 +135,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/archive",
+        url: "http://192.168.43.69:1880/archive",
         data: { id: idDr },
         success: function (data) {
             for (var i = data.length - 1; i >= 0; i--) {
@@ -145,7 +145,7 @@ $(document).ready(function () {
     });
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/nbrArch",
+        url: "http://192.168.43.69:1880/nbrArch",
         //timeout:1000,  
         data: { id: idDr },
         error: function () {

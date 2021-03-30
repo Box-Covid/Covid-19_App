@@ -6,7 +6,7 @@ $(document).ready(function () {
         var demande = "on";
         $.ajax({
             type: "POST",
-            url: "http://192.168.1.13:1880/iddemande",
+            url: "http://192.168.43.69:1880/iddemande",
             data: { id: demande },
             success: function (data) {
 

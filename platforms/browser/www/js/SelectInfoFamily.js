@@ -2,7 +2,7 @@ $(document).ready(function () {
     var id = localStorage.getItem("id");
     $.ajax({
         type: "POST",
-        url: "http://192.168.1.13:1880/idFamily",
+        url: "http://192.168.43.69:1880/idFamily",
         //timeout:1000,  
         data: { Id: id },
         error: function () {
@@ -22,7 +22,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: "http://192.168.1.13:1880/notMedicamentF",
+                url: "http://192.168.43.69:1880/notMedicamentF",
                 data: { id: x },
                 success: function (data) {
         
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                url: "http://192.168.1.13:1880/nbrMedicamentF",
+                url: "http://192.168.43.69:1880/nbrMedicamentF",
                 //timeout:1000,  
                 data: { id: x },
                 error: function () {

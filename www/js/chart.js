@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 	$.ajax({
 		type: "POST",
-		url: "http://192.168.1.13:1880/idpatientStat",
+		url: "http://192.168.43.69:1880/idpatientStat",
 		data: { id: idpatient },
 		success: function (data) {
 			var dated = data[0].DateMess;
@@ -195,7 +195,7 @@ $(document).ready(function () {
 
 	$.ajax({
 		type: "POST",
-		url: "http://192.168.1.13:1880/medicament",
+		url: "http://192.168.43.69:1880/medicament",
 		timeout: 1000,
 		data: { id: idpatient },
 		success: function (data) {
@@ -257,7 +257,7 @@ $(document).ready(function () {
 
 	$.ajax({
 		type: "POST",
-		url: "http://192.168.1.13:1880/maladie",
+		url: "http://192.168.43.69:1880/maladie",
 		timeout: 1000,
 		data: { id: idpatient },
 		success: function (data) {
