@@ -21,22 +21,22 @@ $(document).ready(function () {
 
 			}
 
-			var temp = data[0].Temp + "°C";
+			var temp = data[0].Temp + " °C";
 			$('.temp').html(temp);
 
-			var hum = data[0].Hum + "%";
+			var hum = data[0].Hum + " %";
 			$('.humidity').html(hum);
 
-			var press = data[0].Press + "%";
+			var press = data[0].Press + " hPa";
 			$('.pressure').html(press);
 
-			var tempCorp = data[0].TempBody + "°C";
+			var tempCorp = data[0].TempBody + " °C";
 			$('.TempCorp').html(tempCorp);
 
-			var HeartRate = data[0].HeartRate + "bpm";
+			var HeartRate = data[0].HeartRate + " bpm";
 			$('.HR').html(HeartRate);
 
-			var spo2 = data[0].spo2 + "%";
+			var spo2 = data[0].spo2 + " %";
 			$('.spo2').html(spo2);
 
 			

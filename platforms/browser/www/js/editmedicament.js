@@ -64,6 +64,7 @@ $(document).ready(function () {
             //});
             
             event.preventDefault();
+            
             var demandeMed = "med";
 
             $.ajax
